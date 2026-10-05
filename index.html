@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Rahmatullah Naveed - Computer Science Graduate, Software Developer and Instructor">
+<title>Rahmatullah Naveed | Personal Profile</title>
+<style>
+    *{box-sizing:border-box}
+    body{
+        margin:0;
+        font-family:Arial, Helvetica, sans-serif;
+        background:#f5f7fb;
+        color:#1f2937;
+        line-height:1.7;
+    }
+    .container{max-width:900px;margin:auto;padding:25px}
+    .hero{
+        background:#fff;
+        border-radius:20px;
+        padding:45px 30px;
+        text-align:center;
+        box-shadow:0 8px 30px rgba(0,0,0,.07);
+        margin-top:25px;
+    }
+    .avatar{
+        width:105px;height:105px;border-radius:50%;
+        background:#e8eef7;margin:0 auto 18px;
+        display:flex;align-items:center;justify-content:center;
+        font-size:38px;font-weight:700;color:#315b91;
+    }
+    h1{margin:0;font-size:34px;color:#172554}
+    .tagline{font-size:18px;color:#526071;margin:8px 0 20px}
+    .buttons{display:flex;justify-content:center;gap:10px;flex-wrap:wrap}
+    .btn{
+        text-decoration:none;padding:9px 17px;border-radius:9px;
+        background:#172554;color:#fff;font-size:14px;
+    }
+    .btn.light{background:#eef2f7;color:#172554}
+    section{
+        background:#fff;margin-top:18px;padding:28px;
+        border-radius:18px;box-shadow:0 5px 22px rgba(0,0,0,.05);
+    }
+    h2{margin-top:0;color:#172554;font-size:22px}
+    .grid{display:grid;grid-template-columns:1fr 1fr;gap:15px}
+    .card{
+        background:#f8fafc;border-radius:12px;padding:16px;
+        border-left:4px solid #315b91;
+    }
+    .card strong{display:block;color:#172554;margin-bottom:4px}
+    .skills{display:flex;flex-wrap:wrap;gap:9px}
+    .skill{
+        background:#eef2ff;color:#243b73;
+        padding:6px 11px;border-radius:20px;font-size:14px;
+    }
+    .contact a{color:#315b91;text-decoration:none}
+    footer{text-align:center;padding:25px;color:#697586;font-size:13px}
+    @media(max-width:650px){
+        .container{padding:12px}
+        .hero{padding:35px 18px}
+        h1{font-size:28px}
+        .grid{grid-template-columns:1fr}
+        section{padding:22px}
+    }
+</style>
+</head>
+<body>
+
+<div class="container">
+
+    <header class="hero">
+        <div class="avatar">RN</div>
+        <h1>Rahmatullah Naveed</h1>
+        <div class="tagline">Computer Science Graduate · Software Developer · IT Professional · Instructor</div>
+        <div class="buttons">
+            <a class="btn" href="#about">About Me</a>
+            <a class="btn light" href="#skills">Skills</a>
+            <a class="btn light" href="#experience">Experience</a>
+            <a class="btn light" href="#contact">Contact</a>
+        </div>
+    </header>
+
+    <section id="about">
+        <h2>About Me</h2>
+        <p>
+            I am a Computer Science graduate with nearly five years of professional
+            experience in IT-related positions in Afghanistan. My experience includes
+            software and web development, databases, data management, digital
+            registration, field data collection, reporting, and computer training.
+        </p>
+        <p>
+            I enjoy building practical software systems, learning new technologies,
+            and helping others develop useful computer and technology skills.
+        </p>
+    </section>
+
+    <section id="education">
+        <h2>Education</h2>
+        <div class="card">
+            <strong>Bachelor of Science in Computer Science</strong>
+            Shaikh Zayed University · 2017–2021
+        </div>
+    </section>
+
+    <section id="experience">
+        <h2>Professional Experience</h2>
+        <div class="grid">
+            <div class="card">
+                <strong>Assistant Project Manager — HAALO</strong>
+                WFP-related GFA & MCBP projects · Ghazni
+            </div>
+            <div class="card">
+                <strong>Scope / Data Officer — RHDO</strong>
+                WFP-related GFA project · Paktika
+            </div>
+            <div class="card">
+                <strong>Web & Database Developer — PIXEL Hub IT Solutions</strong>
+                Web development and database systems · Nangarhar
+            </div>
+            <div class="card">
+                <strong>Computer Instructor</strong>
+                Computer education and online teaching experience
+            </div>
+        </div>
+    </section>
+
+    <section id="skills">
+        <h2>Technical Skills</h2>
+        <div class="skills">
+            <span class="skill">Python</span>
+            <span class="skill">Flutter / Dart</span>
+            <span class="skill">Laravel / PHP</span>
+            <span class="skill">MySQL</span>
+            <span class="skill">HTML / CSS / JavaScript</span>
+            <span class="skill">Microsoft Office</span>
+            <span class="skill">MS Access / VBA</span>
+            <span class="skill">WordPress</span>
+            <span class="skill">Database Development</span>
+            <span class="skill">Web Development</span>
+            <span class="skill">Data Management</span>
+            <span class="skill">MIS</span>
+        </div>
+    </section>
+
+    <section>
+        <h2>What I Do</h2>
+        <div class="grid">
+            <div class="card"><strong>Software Development</strong>Desktop and web-based systems.</div>
+            <div class="card"><strong>Web Development</strong>Modern websites and business systems.</div>
+            <div class="card"><strong>Database Systems</strong>Design and development of practical databases.</div>
+            <div class="card"><strong>Computer Training</strong>Project-based computer and technology education.</div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <h2>Contact</h2>
+        <p>Email: <a href="mailto:rn4868cs@gmail.com">rn4868cs@gmail.com</a></p>
+        <p>Location: Paktika / Sharana, Afghanistan</p>
+        <p>
+            If you need a software system, website, database solution,
+            or computer training, feel free to contact me.
+        </p>
+    </section>
+
+    <footer>
+        © 2026 Rahmatullah Naveed · Personal Profile
+    </footer>
+</div>
+</body>
+</html>
