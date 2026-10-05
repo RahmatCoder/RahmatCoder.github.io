@@ -1,170 +1,3112 @@
+
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Rahmatullah Naveed - Computer Science Graduate, Software Developer and Instructor">
-<title>Rahmatullah Naveed | Personal Profile</title>
-<style>
-    *{box-sizing:border-box}
-    body{
-        margin:0;
-        font-family:Arial, Helvetica, sans-serif;
-        background:#f5f7fb;
-        color:#1f2937;
-        line-height:1.7;
-    }
-    .container{max-width:900px;margin:auto;padding:25px}
-    .hero{
-        background:#fff;
-        border-radius:20px;
-        padding:45px 30px;
-        text-align:center;
-        box-shadow:0 8px 30px rgba(0,0,0,.07);
-        margin-top:25px;
-    }
-    .avatar{
-        width:105px;height:105px;border-radius:50%;
-        background:#e8eef7;margin:0 auto 18px;
-        display:flex;align-items:center;justify-content:center;
-        font-size:38px;font-weight:700;color:#315b91;
-    }
-    h1{margin:0;font-size:34px;color:#172554}
-    .tagline{font-size:18px;color:#526071;margin:8px 0 20px}
-    .buttons{display:flex;justify-content:center;gap:10px;flex-wrap:wrap}
-    .btn{
-        text-decoration:none;padding:9px 17px;border-radius:9px;
-        background:#172554;color:#fff;font-size:14px;
-    }
-    .btn.light{background:#eef2f7;color:#172554}
-    section{
-        background:#fff;margin-top:18px;padding:28px;
-        border-radius:18px;box-shadow:0 5px 22px rgba(0,0,0,.05);
-    }
-    h2{margin-top:0;color:#172554;font-size:22px}
-    .grid{display:grid;grid-template-columns:1fr 1fr;gap:15px}
-    .card{
-        background:#f8fafc;border-radius:12px;padding:16px;
-        border-left:4px solid #315b91;
-    }
-    .card strong{display:block;color:#172554;margin-bottom:4px}
-    .skills{display:flex;flex-wrap:wrap;gap:9px}
-    .skill{
-        background:#eef2ff;color:#243b73;
-        padding:6px 11px;border-radius:20px;font-size:14px;
-    }
-    .contact a{color:#315b91;text-decoration:none}
-    footer{text-align:center;padding:25px;color:#697586;font-size:13px}
-    @media(max-width:650px){
-        .container{padding:12px}
-        .hero{padding:35px 18px}
-        h1{font-size:28px}
-        .grid{grid-template-columns:1fr}
-        section{padding:22px}
-    }
-</style>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+          content="Rahmatullah Naveed - Computer Science Graduate, Software Developer, IT Professional and Instructor">
+
+    <meta name="keywords"
+          content="Rahmatullah Naveed, Software Developer, Laravel Developer, Python Developer, Web Developer, Database Developer">
+
+    <meta name="author" content="Rahmatullah Naveed">
+
+    <title>Rahmatullah Naveed | Software Developer & IT Professional</title>
+
+
+    <!-- Google Font -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+          rel="stylesheet">
+
+
+    <!-- Font Awesome -->
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+
+    <style>
+
+        /* =====================================================
+           GLOBAL
+        ===================================================== */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+
+        :root {
+
+            --primary: #2563eb;
+
+            --primary-dark: #1d4ed8;
+
+            --secondary: #0f172a;
+
+            --text: #334155;
+
+            --muted: #64748b;
+
+            --light: #f8fafc;
+
+            --white: #ffffff;
+
+            --border: #e2e8f0;
+
+            --linkedin: #0a66c2;
+
+            --facebook: #1877f2;
+
+            --whatsapp: #25d366;
+
+        }
+
+
+        body {
+
+            font-family: "Inter", Arial, Helvetica, sans-serif;
+
+            background: #f1f5f9;
+
+            color: var(--text);
+
+            line-height: 1.7;
+
+            overflow-x: hidden;
+
+        }
+
+
+        a {
+            text-decoration: none;
+        }
+
+
+        img {
+
+            max-width: 100%;
+
+            display: block;
+
+        }
+
+
+        .container {
+
+            width: min(1180px, 92%);
+
+            margin: auto;
+
+        }
+
+
+
+        /* =====================================================
+           NAVIGATION
+        ===================================================== */
+
+        .navbar {
+
+            position: sticky;
+
+            top: 0;
+
+            z-index: 1000;
+
+            background: rgba(255,255,255,.92);
+
+            backdrop-filter: blur(15px);
+
+            border-bottom: 1px solid rgba(226,232,240,.8);
+
+        }
+
+
+        .nav-content {
+
+            min-height: 70px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            gap: 30px;
+
+        }
+
+
+        .logo {
+
+            font-size: 23px;
+
+            font-weight: 800;
+
+            color: var(--secondary);
+
+        }
+
+
+        .logo span {
+
+            color: var(--primary);
+
+        }
+
+
+        .nav-links {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 25px;
+
+            list-style: none;
+
+        }
+
+
+        .nav-links a {
+
+            color: #334155;
+
+            font-size: 14px;
+
+            font-weight: 600;
+
+            position: relative;
+
+            transition: .3s ease;
+
+        }
+
+
+        .nav-links a::after {
+
+            content: "";
+
+            position: absolute;
+
+            left: 0;
+
+            bottom: -8px;
+
+            width: 0;
+
+            height: 2px;
+
+            background: var(--primary);
+
+            transition: .3s ease;
+
+        }
+
+
+        .nav-links a:hover {
+
+            color: var(--primary);
+
+        }
+
+
+        .nav-links a:hover::after {
+
+            width: 100%;
+
+        }
+
+
+
+        /* =====================================================
+           HERO
+        ===================================================== */
+
+        .hero {
+
+            position: relative;
+
+            overflow: hidden;
+
+            padding: 100px 0 90px;
+
+            background:
+
+                radial-gradient(
+                    circle at 10% 20%,
+                    rgba(37,99,235,.14),
+                    transparent 30%
+                ),
+
+                radial-gradient(
+                    circle at 90% 80%,
+                    rgba(14,165,233,.12),
+                    transparent 30%
+                ),
+
+                linear-gradient(
+                    135deg,
+                    #eff6ff,
+                    #fff 55%,
+                    #f8fafc
+                );
+
+        }
+
+
+        .hero::before {
+
+            content: "";
+
+            position: absolute;
+
+            width: 300px;
+
+            height: 300px;
+
+            border-radius: 50%;
+
+            background: rgba(37,99,235,.06);
+
+            top: -100px;
+
+            left: -100px;
+
+            animation: floating 7s ease-in-out infinite;
+
+        }
+
+
+        .hero::after {
+
+            content: "";
+
+            position: absolute;
+
+            width: 250px;
+
+            height: 250px;
+
+            border-radius: 50%;
+
+            background: rgba(14,165,233,.06);
+
+            bottom: -100px;
+
+            right: -80px;
+
+            animation: floating 6s ease-in-out infinite reverse;
+
+        }
+
+
+        .hero-grid {
+
+            position: relative;
+
+            z-index: 2;
+
+            display: grid;
+
+            grid-template-columns: 380px 1fr;
+
+            align-items: center;
+
+            gap: 70px;
+
+        }
+
+
+        /* =====================================================
+           PROFILE IMAGE
+        ===================================================== */
+
+        .profile-wrapper {
+
+            position: relative;
+
+            width: 300px;
+
+            height: 300px;
+
+            margin: auto;
+
+        }
+
+
+        .profile-wrapper::before {
+
+            content: "";
+
+            position: absolute;
+
+            inset: -12px;
+
+            border-radius: 50%;
+
+            border: 3px solid rgba(37,99,235,.25);
+
+            animation: rotate 12s linear infinite;
+
+        }
+
+
+        .profile-wrapper::after {
+
+            content: "";
+
+            position: absolute;
+
+            inset: -25px;
+
+            border-radius: 50%;
+
+            border: 1px dashed rgba(37,99,235,.25);
+
+            animation: rotateReverse 18s linear infinite;
+
+        }
+
+
+        .profile-image {
+
+            width: 100%;
+
+            height: 100%;
+
+            object-fit: cover;
+
+            object-position: center;
+
+            border-radius: 50%;
+
+            border: 7px solid var(--white);
+
+            box-shadow:
+
+                0 20px 50px rgba(15,23,42,.18),
+
+                0 0 0 8px rgba(37,99,235,.10);
+
+            position: relative;
+
+            z-index: 2;
+
+            animation: profileFloat 5s ease-in-out infinite;
+
+        }
+
+
+        .status {
+
+            position: absolute;
+
+            right: 5px;
+
+            bottom: 25px;
+
+            z-index: 5;
+
+            width: 25px;
+
+            height: 25px;
+
+            background: #16a34a;
+
+            border: 5px solid white;
+
+            border-radius: 50%;
+
+        }
+
+
+
+        /* =====================================================
+           HERO CONTENT
+        ===================================================== */
+
+        .hero-badge {
+
+            display: inline-flex;
+
+            align-items: center;
+
+            gap: 8px;
+
+            padding: 8px 14px;
+
+            border-radius: 30px;
+
+            background: #dbeafe;
+
+            color: var(--primary-dark);
+
+            font-size: 13px;
+
+            font-weight: 700;
+
+            margin-bottom: 18px;
+
+        }
+
+
+        .hero h1 {
+
+            font-size: clamp(42px, 6vw, 70px);
+
+            line-height: 1.05;
+
+            color: var(--secondary);
+
+            font-weight: 800;
+
+            margin-bottom: 18px;
+
+        }
+
+
+        .hero h1 span {
+
+            color: var(--primary);
+
+        }
+
+
+        .hero-title {
+
+            font-size: 20px;
+
+            color: #475569;
+
+            font-weight: 600;
+
+            margin-bottom: 18px;
+
+        }
+
+
+        .hero-description {
+
+            max-width: 680px;
+
+            color: var(--muted);
+
+            font-size: 16px;
+
+            margin-bottom: 30px;
+
+        }
+
+
+        .hero-buttons {
+
+            display: flex;
+
+            align-items: center;
+
+            flex-wrap: wrap;
+
+            gap: 12px;
+
+            margin-bottom: 25px;
+
+        }
+
+
+        .btn {
+
+            display: inline-flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            gap: 9px;
+
+            padding: 12px 20px;
+
+            border-radius: 10px;
+
+            font-size: 14px;
+
+            font-weight: 700;
+
+            transition: .3s ease;
+
+        }
+
+
+        .btn-primary {
+
+            background: var(--primary);
+
+            color: white;
+
+            box-shadow: 0 8px 20px rgba(37,99,235,.25);
+
+        }
+
+
+        .btn-primary:hover {
+
+            background: var(--primary-dark);
+
+            transform: translateY(-3px);
+
+            box-shadow: 0 12px 25px rgba(37,99,235,.35);
+
+        }
+
+
+        .btn-outline {
+
+            border: 1px solid #cbd5e1;
+
+            color: var(--secondary);
+
+            background: white;
+
+        }
+
+
+        .btn-outline:hover {
+
+            border-color: var(--primary);
+
+            color: var(--primary);
+
+            transform: translateY(-3px);
+
+        }
+
+
+
+        /* =====================================================
+           SOCIAL LINKS
+        ===================================================== */
+
+        .social-links {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 10px;
+
+        }
+
+
+        .social {
+
+            width: 42px;
+
+            height: 42px;
+
+            border-radius: 50%;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            color: white;
+
+            font-size: 17px;
+
+            transition: .3s ease;
+
+        }
+
+
+        .social:hover {
+
+            transform: translateY(-5px) scale(1.05);
+
+        }
+
+
+        .linkedin {
+
+            background: var(--linkedin);
+
+        }
+
+
+        .facebook {
+
+            background: var(--facebook);
+
+        }
+
+
+        .whatsapp {
+
+            background: var(--whatsapp);
+
+        }
+
+
+        .email-social {
+
+            background: var(--secondary);
+
+        }
+
+
+
+        /* =====================================================
+           GENERAL SECTIONS
+        ===================================================== */
+
+        section {
+
+            padding: 85px 0;
+
+        }
+
+
+        .section-header {
+
+            text-align: center;
+
+            margin-bottom: 45px;
+
+        }
+
+
+        .section-header span {
+
+            display: inline-block;
+
+            color: var(--primary);
+
+            font-size: 13px;
+
+            font-weight: 800;
+
+            text-transform: uppercase;
+
+            letter-spacing: 2px;
+
+            margin-bottom: 8px;
+
+        }
+
+
+        .section-header h2 {
+
+            font-size: 34px;
+
+            color: var(--secondary);
+
+            margin-bottom: 10px;
+
+        }
+
+
+        .section-header p {
+
+            color: var(--muted);
+
+            max-width: 650px;
+
+            margin: auto;
+
+        }
+
+
+        .card {
+
+            background: white;
+
+            border: 1px solid var(--border);
+
+            border-radius: 20px;
+
+            padding: 30px;
+
+            box-shadow: 0 10px 35px rgba(15,23,42,.05);
+
+            transition: .35s ease;
+
+        }
+
+
+        .card:hover {
+
+            transform: translateY(-6px);
+
+            box-shadow: 0 18px 45px rgba(15,23,42,.09);
+
+        }
+
+
+        .card p + p {
+
+            margin-top: 18px;
+
+        }
+
+
+
+        /* =====================================================
+           ABOUT
+        ===================================================== */
+
+        .about-grid {
+
+            display: grid;
+
+            grid-template-columns: 1.3fr .7fr;
+
+            gap: 30px;
+
+        }
+
+
+        .info-list {
+
+            display: flex;
+
+            flex-direction: column;
+
+            gap: 18px;
+
+        }
+
+
+        .info-item {
+
+            display: flex;
+
+            align-items: flex-start;
+
+            gap: 13px;
+
+        }
+
+
+        .info-icon {
+
+            min-width: 42px;
+
+            height: 42px;
+
+            border-radius: 12px;
+
+            background: #eff6ff;
+
+            color: var(--primary);
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+        }
+
+
+        .info-item strong {
+
+            display: block;
+
+            color: var(--secondary);
+
+            font-size: 13px;
+
+            margin-bottom: 2px;
+
+        }
+
+
+        .info-item a,
+
+        .info-item span {
+
+            color: var(--muted);
+
+            font-size: 14px;
+
+            word-break: break-word;
+
+        }
+
+
+        .info-item a:hover {
+
+            color: var(--primary);
+
+        }
+
+
+
+        /* =====================================================
+           EDUCATION
+        ===================================================== */
+
+        .education-card {
+
+            display: flex;
+
+            align-items: flex-start;
+
+            gap: 20px;
+
+        }
+
+
+        .large-icon {
+
+            min-width: 58px;
+
+            height: 58px;
+
+            border-radius: 15px;
+
+            background: #dbeafe;
+
+            color: var(--primary);
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            font-size: 23px;
+
+        }
+
+
+        .education-card h3 {
+
+            color: var(--secondary);
+
+            margin-bottom: 5px;
+
+            font-size: 19px;
+
+        }
+
+
+        .education-card p {
+
+            color: var(--muted);
+
+            font-size: 14px;
+
+        }
+
+
+
+        /* =====================================================
+           EXPERIENCE
+        ===================================================== */
+
+        .experience-grid {
+
+            display: grid;
+
+            grid-template-columns: repeat(2,1fr);
+
+            gap: 20px;
+
+        }
+
+
+        .experience-card {
+
+            position: relative;
+
+            overflow: hidden;
+
+        }
+
+
+        .experience-card::before {
+
+            content: "";
+
+            position: absolute;
+
+            top: 0;
+
+            left: 0;
+
+            width: 4px;
+
+            height: 100%;
+
+            background: var(--primary);
+
+        }
+
+
+        .experience-top {
+
+            display: flex;
+
+            align-items: flex-start;
+
+            gap: 15px;
+
+        }
+
+
+        .experience-icon {
+
+            min-width: 48px;
+
+            height: 48px;
+
+            border-radius: 13px;
+
+            background: #eff6ff;
+
+            color: var(--primary);
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+        }
+
+
+        .experience-card h3 {
+
+            color: var(--secondary);
+
+            font-size: 17px;
+
+            margin-bottom: 4px;
+
+        }
+
+
+        .experience-card .company {
+
+            color: var(--primary);
+
+            font-size: 14px;
+
+            font-weight: 700;
+
+        }
+
+
+        .experience-card p {
+
+            color: var(--muted);
+
+            font-size: 14px;
+
+            margin-top: 10px;
+
+        }
+
+
+
+        /* =====================================================
+           SKILLS
+        ===================================================== */
+
+        .skills-wrapper {
+
+            display: flex;
+
+            flex-wrap: wrap;
+
+            justify-content: center;
+
+            gap: 12px;
+
+        }
+
+
+        .skill {
+
+            display: inline-flex;
+
+            align-items: center;
+
+            gap: 8px;
+
+            padding: 10px 15px;
+
+            background: white;
+
+            border: 1px solid var(--border);
+
+            border-radius: 30px;
+
+            color: #334155;
+
+            font-size: 14px;
+
+            font-weight: 600;
+
+            transition: .3s ease;
+
+        }
+
+
+        .skill i {
+
+            color: var(--primary);
+
+        }
+
+
+        .skill:hover {
+
+            color: var(--primary);
+
+            border-color: #93c5fd;
+
+            transform: translateY(-3px);
+
+            box-shadow: 0 8px 20px rgba(37,99,235,.10);
+
+        }
+
+
+
+        /* =====================================================
+           SERVICES
+        ===================================================== */
+
+        .services-grid {
+
+            display: grid;
+
+            grid-template-columns: repeat(4,1fr);
+
+            gap: 20px;
+
+        }
+
+
+        .service {
+
+            text-align: center;
+
+        }
+
+
+        .service-icon {
+
+            width: 60px;
+
+            height: 60px;
+
+            margin: 0 auto 18px;
+
+            border-radius: 17px;
+
+            background: #eff6ff;
+
+            color: var(--primary);
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            font-size: 24px;
+
+        }
+
+
+        .service h3 {
+
+            color: var(--secondary);
+
+            font-size: 17px;
+
+            margin-bottom: 8px;
+
+        }
+
+
+        .service p {
+
+            color: var(--muted);
+
+            font-size: 14px;
+
+        }
+
+
+
+        /* =====================================================
+           FRIENDS
+        ===================================================== */
+
+        .friends-section {
+
+            background: #f8fafc;
+
+        }
+
+
+        .friends-grid {
+
+            display: grid;
+
+            grid-template-columns: repeat(5,1fr);
+
+            gap: 20px;
+
+        }
+
+
+        .friend-card {
+
+            text-align: center;
+
+            padding: 28px 20px;
+
+            position: relative;
+
+            overflow: hidden;
+
+        }
+
+
+        .friend-card::before {
+
+            content: "";
+
+            position: absolute;
+
+            top: 0;
+
+            left: 0;
+
+            width: 100%;
+
+            height: 4px;
+
+            background: var(--primary);
+
+            transform: scaleX(0);
+
+            transform-origin: center;
+
+            transition: .35s ease;
+
+        }
+
+
+        .friend-card:hover::before {
+
+            transform: scaleX(1);
+
+        }
+
+
+        .friend-image-wrapper {
+
+            width: 125px;
+
+            height: 125px;
+
+            margin: 0 auto 18px;
+
+            padding: 5px;
+
+            border-radius: 50%;
+
+            background: linear-gradient(
+                135deg,
+                var(--primary),
+                #0ea5e9
+            );
+
+            transition: .35s ease;
+
+        }
+
+
+        .friend-card:hover .friend-image-wrapper {
+
+            transform: translateY(-6px) scale(1.05);
+
+            box-shadow: 0 15px 30px rgba(37,99,235,.20);
+
+        }
+
+
+        .friend-image {
+
+            width: 100%;
+
+            height: 100%;
+
+            object-fit: cover;
+
+            border-radius: 50%;
+
+            border: 4px solid white;
+
+        }
+
+
+        .friend-card h3 {
+
+            color: var(--secondary);
+
+            font-size: 17px;
+
+            margin-bottom: 7px;
+
+        }
+
+
+        .friend-card p {
+
+            color: var(--muted);
+
+            font-size: 13px;
+
+            line-height: 1.6;
+
+        }
+
+
+        .friend-role {
+
+            display: inline-block;
+
+            margin-top: 10px;
+
+            padding: 5px 10px;
+
+            border-radius: 20px;
+
+            background: #eff6ff;
+
+            color: var(--primary);
+
+            font-size: 11px;
+
+            font-weight: 700;
+
+        }
+
+
+
+        /* =====================================================
+           CONTACT
+        ===================================================== */
+
+        .contact-section {
+
+            padding-top: 30px;
+
+        }
+
+
+        .contact-box {
+
+            position: relative;
+
+            overflow: hidden;
+
+            background:
+
+                linear-gradient(
+                    135deg,
+                    #1d4ed8,
+                    #2563eb,
+                    #0ea5e9
+                );
+
+            color: white;
+
+            border-radius: 25px;
+
+            padding: 50px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            gap: 30px;
+
+            box-shadow: 0 20px 50px rgba(37,99,235,.25);
+
+        }
+
+
+        .contact-box::after {
+
+            content: "";
+
+            position: absolute;
+
+            width: 250px;
+
+            height: 250px;
+
+            border-radius: 50%;
+
+            border: 1px solid rgba(255,255,255,.15);
+
+            right: -70px;
+
+            top: -100px;
+
+        }
+
+
+        .contact-box h2 {
+
+            font-size: 30px;
+
+            margin-bottom: 8px;
+
+        }
+
+
+        .contact-box p {
+
+            max-width: 650px;
+
+            opacity: .9;
+
+        }
+
+
+        .contact-box .btn {
+
+            background: white;
+
+            color: var(--primary-dark);
+
+            white-space: nowrap;
+
+            position: relative;
+
+            z-index: 2;
+
+        }
+
+
+        .contact-box .btn:hover {
+
+            transform: translateY(-3px);
+
+        }
+
+
+
+        /* =====================================================
+           FOOTER
+        ===================================================== */
+
+        footer {
+
+            margin-top: 70px;
+
+            background: #0f172a;
+
+            color: #cbd5e1;
+
+            padding: 30px 0;
+
+        }
+
+
+        .footer-content {
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            gap: 20px;
+
+        }
+
+
+        .footer-content p {
+
+            font-size: 13px;
+
+        }
+
+
+        .footer-socials {
+
+            display: flex;
+
+            gap: 8px;
+
+        }
+
+
+        .footer-socials .social {
+
+            width: 36px;
+
+            height: 36px;
+
+            font-size: 14px;
+
+        }
+
+
+
+        /* =====================================================
+           ANIMATIONS
+        ===================================================== */
+
+        @keyframes floating {
+
+            0%,100% {
+
+                transform: translateY(0);
+
+            }
+
+            50% {
+
+                transform: translateY(20px);
+
+            }
+
+        }
+
+
+        @keyframes profileFloat {
+
+            0%,100% {
+
+                transform: translateY(0);
+
+            }
+
+            50% {
+
+                transform: translateY(-8px);
+
+            }
+
+        }
+
+
+        @keyframes rotate {
+
+            from {
+
+                transform: rotate(0deg);
+
+            }
+
+            to {
+
+                transform: rotate(360deg);
+
+            }
+
+        }
+
+
+        @keyframes rotateReverse {
+
+            from {
+
+                transform: rotate(360deg);
+
+            }
+
+            to {
+
+                transform: rotate(0deg);
+
+            }
+
+        }
+
+
+
+        /* =====================================================
+           RESPONSIVE
+        ===================================================== */
+
+        @media (max-width: 1100px) {
+
+            .friends-grid {
+
+                grid-template-columns: repeat(3,1fr);
+
+            }
+
+        }
+
+
+        @media (max-width: 950px) {
+
+            .hero-grid {
+
+                grid-template-columns: 1fr;
+
+                text-align: center;
+
+            }
+
+
+            .hero-description {
+
+                margin-left: auto;
+
+                margin-right: auto;
+
+            }
+
+
+            .hero-buttons,
+            .social-links {
+
+                justify-content: center;
+
+            }
+
+
+            .about-grid {
+
+                grid-template-columns: 1fr;
+
+            }
+
+
+            .services-grid {
+
+                grid-template-columns: repeat(2,1fr);
+
+            }
+
+        }
+
+
+        @media (max-width: 750px) {
+
+            .nav-links {
+
+                display: none;
+
+            }
+
+
+            .hero {
+
+                padding: 70px 0;
+
+            }
+
+
+            .profile-wrapper {
+
+                width: 240px;
+
+                height: 240px;
+
+            }
+
+
+            .experience-grid {
+
+                grid-template-columns: 1fr;
+
+            }
+
+
+            .friends-grid {
+
+                grid-template-columns: repeat(2,1fr);
+
+            }
+
+
+            .contact-box {
+
+                flex-direction: column;
+
+                align-items: flex-start;
+
+                padding: 35px 25px;
+
+            }
+
+
+            .footer-content {
+
+                flex-direction: column;
+
+                text-align: center;
+
+            }
+
+        }
+
+
+        @media (max-width: 500px) {
+
+            .container {
+
+                width: 90%;
+
+            }
+
+
+            .hero h1 {
+
+                font-size: 39px;
+
+            }
+
+
+            .hero-title {
+
+                font-size: 17px;
+
+            }
+
+
+            section {
+
+                padding: 60px 0;
+
+            }
+
+
+            .section-header h2 {
+
+                font-size: 28px;
+
+            }
+
+
+            .services-grid {
+
+                grid-template-columns: 1fr;
+
+            }
+
+
+            .friends-grid {
+
+                grid-template-columns: 1fr;
+
+            }
+
+
+            .card {
+
+                padding: 22px;
+
+            }
+
+
+            .hero-buttons {
+
+                flex-direction: column;
+
+                align-items: stretch;
+
+            }
+
+
+            .hero-buttons .btn {
+
+                width: 100%;
+
+            }
+
+        }
+
+    </style>
+
 </head>
+
+
 <body>
 
-<div class="container">
 
-    <header class="hero">
-        <div class="avatar">RN</div>
-        <h1>Rahmatullah Naveed</h1>
-        <div class="tagline">Computer Science Graduate · Software Developer · IT Professional · Instructor</div>
-        <div class="buttons">
-            <a class="btn" href="#about">About Me</a>
-            <a class="btn light" href="#skills">Skills</a>
-            <a class="btn light" href="#experience">Experience</a>
-            <a class="btn light" href="#contact">Contact</a>
+<!-- =====================================================
+     NAVIGATION
+===================================================== -->
+
+<nav class="navbar">
+
+    <div class="container nav-content">
+
+        <a href="#home" class="logo">
+
+            <span>Rahmatullah</span> Naveed
+
+        </a>
+
+
+        <ul class="nav-links">
+
+            <li>
+                <a href="#home">Home</a>
+            </li>
+
+            <li>
+                <a href="#about">About</a>
+            </li>
+
+            <li>
+                <a href="#education">Education</a>
+            </li>
+
+            <li>
+                <a href="#experience">Experience</a>
+            </li>
+
+            <li>
+                <a href="#skills">Skills</a>
+            </li>
+
+            <li>
+                <a href="#services">Services</a>
+            </li>
+
+            <li>
+                <a href="#friends">Friends</a>
+            </li>
+
+            <li>
+                <a href="#contact">Contact</a>
+            </li>
+
+        </ul>
+
+    </div>
+
+</nav>
+
+
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<header class="hero" id="home">
+
+    <div class="container hero-grid">
+
+
+        <!-- PROFILE IMAGE -->
+
+        <div class="profile-wrapper">
+
+            <img
+                src="Rahmatullah%20Naveed%20Picture.png"
+                alt="Rahmatullah Naveed"
+                class="profile-image"
+            >
+
+            <div class="status"></div>
+
         </div>
-    </header>
 
-    <section id="about">
-        <h2>About Me</h2>
+
+        <!-- HERO CONTENT -->
+
+        <div>
+
+            <div class="hero-badge">
+
+                <i class="fa-solid fa-hand"></i>
+
+                Hello, I am
+
+            </div>
+
+
+            <h1>
+
+                Rahmatullah <span>Naveed</span>
+
+            </h1>
+
+
+            <div class="hero-title">
+
+                Computer Science Graduate ·
+                Software Developer ·
+                IT Professional ·
+                Instructor
+
+            </div>
+
+
+            <p class="hero-description">
+
+                I build practical software systems, modern websites,
+                database solutions, and useful technology-based solutions.
+                I also enjoy sharing knowledge through computer training
+                and practical learning.
+
+            </p>
+
+
+            <div class="hero-buttons">
+
+                <a href="#contact" class="btn btn-primary">
+
+                    <i class="fa-solid fa-envelope"></i>
+
+                    Contact Me
+
+                </a>
+
+
+                <a href="#about" class="btn btn-outline">
+
+                    <i class="fa-solid fa-user"></i>
+
+                    About Me
+
+                </a>
+
+            </div>
+
+
+            <!-- SOCIAL LINKS -->
+
+            <div class="social-links">
+
+
+                <!-- LinkedIn -->
+
+                <a
+                    href="https://www.linkedin.com/in/rahmatullah-naveed-2412b8331"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="social linkedin"
+                    title="LinkedIn"
+                >
+
+                    <i class="fa-brands fa-linkedin-in"></i>
+
+                </a>
+
+
+                <!-- Facebook -->
+
+                <a
+                    href="https://www.facebook.com/share/1BnZhnywvd/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="social facebook"
+                    title="Facebook"
+                >
+
+                    <i class="fa-brands fa-facebook-f"></i>
+
+                </a>
+
+
+                <!-- WhatsApp -->
+
+                <a
+                    href="https://wa.me/93792929097"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="social whatsapp"
+                    title="WhatsApp"
+                >
+
+                    <i class="fa-brands fa-whatsapp"></i>
+
+                </a>
+
+
+                <!-- Email -->
+
+                <a
+                    href="mailto:rn4868cs@gmail.com"
+                    class="social email-social"
+                    title="Email"
+                >
+
+                    <i class="fa-solid fa-envelope"></i>
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+
+<!-- =====================================================
+     ABOUT
+===================================================== -->
+
+<section id="about">
+
+    <div class="container">
+
+
+        <div class="section-header">
+
+            <span>About Me</span>
+
+            <h2>Who I Am</h2>
+
+            <p>
+
+                A Computer Science graduate with professional
+                experience in IT, software development, databases,
+                data management and computer training.
+
+            </p>
+
+        </div>
+
+
+        <div class="about-grid">
+
+
+            <div class="card">
+
+                <p>
+
+                    I am a Computer Science graduate with nearly five years
+                    of professional experience in IT-related positions in
+                    Afghanistan.
+
+                </p>
+
+
+                <p>
+
+                    My experience includes software and web development,
+                    databases, data management, digital registration,
+                    field data collection, reporting, and computer training.
+
+                </p>
+
+
+                <p>
+
+                    I enjoy building practical software systems, learning
+                    new technologies, and helping others develop useful
+                    computer and technology skills.
+
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <div class="info-list">
+
+
+                    <!-- EMAIL -->
+
+                    <div class="info-item">
+
+                        <div class="info-icon">
+
+                            <i class="fa-solid fa-envelope"></i>
+
+                        </div>
+
+
+                        <div>
+
+                            <strong>Email</strong>
+
+                            <a href="mailto:rn4868cs@gmail.com">
+
+                                rn4868cs@gmail.com
+
+                            </a>
+
+                            <br>
+
+                            <a href="mailto:rahmatn2@outlook.com">
+
+                                rahmatn2@outlook.com
+
+                            </a>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- PHONE -->
+
+                    <div class="info-item">
+
+                        <div class="info-icon">
+
+                            <i class="fa-solid fa-phone"></i>
+
+                        </div>
+
+
+                        <div>
+
+                            <strong>Phone</strong>
+
+                            <a href="tel:+93792929097">
+
+                                0792929097
+
+                            </a>
+
+                            <br>
+
+                            <a href="tel:+93764964868">
+
+                                0764964868
+
+                            </a>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- WHATSAPP -->
+
+                    <div class="info-item">
+
+                        <div class="info-icon">
+
+                            <i class="fa-brands fa-whatsapp"></i>
+
+                        </div>
+
+
+                        <div>
+
+                            <strong>WhatsApp</strong>
+
+                            <a
+                                href="https://wa.me/93792929097"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+
+                                0792929097
+
+                            </a>
+
+                            <br>
+
+                            <small>
+
+                                Click to chat directly
+
+                            </small>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- LOCATION -->
+
+                    <div class="info-item">
+
+                        <div class="info-icon">
+
+                            <i class="fa-solid fa-location-dot"></i>
+
+                        </div>
+
+
+                        <div>
+
+                            <strong>Location</strong>
+
+                            <span>
+
+                                Paktika / Sharana, Afghanistan
+
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     EDUCATION
+===================================================== -->
+
+<section id="education">
+
+    <div class="container">
+
+        <div class="section-header">
+
+            <span>Education</span>
+
+            <h2>Academic Background</h2>
+
+        </div>
+
+
+        <div class="card education-card">
+
+            <div class="large-icon">
+
+                <i class="fa-solid fa-graduation-cap"></i>
+
+            </div>
+
+
+            <div>
+
+                <h3>
+
+                    Bachelor of Science in Computer Science
+
+                </h3>
+
+
+                <p>
+
+                    Shaikh Zayed University · 2017 – 2021
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     EXPERIENCE
+===================================================== -->
+
+<section id="experience">
+
+    <div class="container">
+
+        <div class="section-header">
+
+            <span>Experience</span>
+
+            <h2>Professional Experience</h2>
+
+        </div>
+
+
+        <div class="experience-grid">
+
+
+            <!-- EXPERIENCE 1 -->
+
+            <div class="card experience-card">
+
+                <div class="experience-top">
+
+                    <div class="experience-icon">
+
+                        <i class="fa-solid fa-briefcase"></i>
+
+                    </div>
+
+
+                    <div>
+
+                        <h3>
+
+                            Assistant Project Manager
+
+                        </h3>
+
+
+                        <div class="company">
+
+                            HAALO
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <p>
+
+                    WFP-related GFA & MCBP projects · Ghazni
+
+                </p>
+
+            </div>
+
+
+
+            <!-- EXPERIENCE 2 -->
+
+            <div class="card experience-card">
+
+                <div class="experience-top">
+
+                    <div class="experience-icon">
+
+                        <i class="fa-solid fa-database"></i>
+
+                    </div>
+
+
+                    <div>
+
+                        <h3>
+
+                            Scope / Data Officer
+
+                        </h3>
+
+
+                        <div class="company">
+
+                            RHDO
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <p>
+
+                    WFP-related GFA project · Paktika
+
+                </p>
+
+            </div>
+
+
+
+            <!-- EXPERIENCE 3 -->
+
+            <div class="card experience-card">
+
+                <div class="experience-top">
+
+                    <div class="experience-icon">
+
+                        <i class="fa-solid fa-code"></i>
+
+                    </div>
+
+
+                    <div>
+
+                        <h3>
+
+                            Web & Database Developer
+
+                        </h3>
+
+
+                        <div class="company">
+
+                            PIXEL Hub IT Solutions
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <p>
+
+                    Web development and database systems · Nangarhar
+
+                </p>
+
+            </div>
+
+
+
+            <!-- EXPERIENCE 4 -->
+
+            <div class="card experience-card">
+
+                <div class="experience-top">
+
+                    <div class="experience-icon">
+
+                        <i class="fa-solid fa-chalkboard-user"></i>
+
+                    </div>
+
+
+                    <div>
+
+                        <h3>
+
+                            Computer Instructor
+
+                        </h3>
+
+
+                        <div class="company">
+
+                            Computer Education & Training
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <p>
+
+                    Computer education and online teaching experience.
+
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     SKILLS
+===================================================== -->
+
+<section id="skills">
+
+    <div class="container">
+
+        <div class="section-header">
+
+            <span>Technical Skills</span>
+
+            <h2>My Skills</h2>
+
+
+            <p>
+
+                Technologies and professional skills that I use
+                for software, web, database and data-related work.
+
+            </p>
+
+        </div>
+
+
+        <div class="skills-wrapper">
+
+
+            <div class="skill">
+
+                <i class="fa-brands fa-python"></i>
+
+                Python
+
+            </div>
+
+
+            <div class="skill">
+
+                <i class="fa-solid fa-mobile-screen-button"></i>
+
+                Flutter / Dart
+
+            </div>
+
+
+            <div class="skill">
+
+                <i class="fa-brands fa-laravel"></i>
+
+                Laravel / PHP
+
+            </div>
+
+
+            <div class="skill">
+
+                <i class="fa-solid fa-database"></i>
+
+                MySQL
+
+            </div>
+
+
+            <div class="skill">
+
+                <i class="fa-brands fa-html5"></i>
+
+                HTML / CSS / JavaScript
+
+            </div>
+
+
+            <div class="skill">
+
+                <i class="fa-solid fa-file-word"></i>
+
+                Microsoft Office
+
+            </div>
+
+
+            <div class="skill">
+
+                <i class="fa-solid fa-table"></i>
+
+                MS Access / VBA
+
+            </div>
+
+
+            <div class="skill">
+
+                <i class="fa-brands fa-wordpress"></i>
+
+                WordPress
+
+            </div>
+
+
+            <div class="skill">
+
+                <i class="fa-solid fa-database"></i>
+
+                Database Development
+
+            </div>
+
+
+            <div class="skill">
+
+                <i class="fa-solid fa-globe"></i>
+
+                Web Development
+
+            </div>
+
+
+            <div class="skill">
+
+                <i class="fa-solid fa-chart-column"></i>
+
+                Data Management
+
+            </div>
+
+
+            <div class="skill">
+
+                <i class="fa-solid fa-chart-line"></i>
+
+                MIS
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     SERVICES
+===================================================== -->
+
+<section id="services">
+
+    <div class="container">
+
+
+        <div class="section-header">
+
+            <span>What I Do</span>
+
+            <h2>My Services</h2>
+
+        </div>
+
+
+        <div class="services-grid">
+
+
+            <!-- SERVICE 1 -->
+
+            <div class="card service">
+
+                <div class="service-icon">
+
+                    <i class="fa-solid fa-code"></i>
+
+                </div>
+
+
+                <h3>
+
+                    Software Development
+
+                </h3>
+
+
+                <p>
+
+                    Desktop and web-based software systems.
+
+                </p>
+
+            </div>
+
+
+
+            <!-- SERVICE 2 -->
+
+            <div class="card service">
+
+                <div class="service-icon">
+
+                    <i class="fa-solid fa-globe"></i>
+
+                </div>
+
+
+                <h3>
+
+                    Web Development
+
+                </h3>
+
+
+                <p>
+
+                    Modern websites and business systems.
+
+                </p>
+
+            </div>
+
+
+
+            <!-- SERVICE 3 -->
+
+            <div class="card service">
+
+                <div class="service-icon">
+
+                    <i class="fa-solid fa-database"></i>
+
+                </div>
+
+
+                <h3>
+
+                    Database Systems
+
+                </h3>
+
+
+                <p>
+
+                    Design and development of practical databases.
+
+                </p>
+
+            </div>
+
+
+
+            <!-- SERVICE 4 -->
+
+            <div class="card service">
+
+                <div class="service-icon">
+
+                    <i class="fa-solid fa-chalkboard-user"></i>
+
+                </div>
+
+
+                <h3>
+
+                    Computer Training
+
+                </h3>
+
+
+                <p>
+
+                    Project-based computer and technology education.
+
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     MY FRIENDS
+===================================================== -->
+
+<section id="friends" class="friends-section">
+
+    <div class="container">
+
+
+        <div class="section-header">
+
+            <span>My Friends</span>
+
+            <h2>People Around Me</h2>
+
+
+            <p>
+
+                A group of friends and professionals whom I value
+                for their friendship, knowledge and experience.
+
+            </p>
+
+        </div>
+
+
+        <div class="friends-grid">
+
+
+            <!-- =================================================
+                 FRIEND 1 - DILAWAR DANISH
+            ================================================== -->
+
+            <div class="card friend-card">
+
+
+                <div class="friend-image-wrapper">
+
+                    <img
+                        src="danish.jpeg"
+                        alt="Dilawar Danish"
+                        class="friend-image"
+                    >
+
+                </div>
+
+
+                <h3>
+
+                    Dilawar Danish
+
+                </h3>
+
+
+                <p>
+
+                    Teacher & Journalist
+
+                </p>
+
+
+                <span class="friend-role">
+
+                    Education & Journalism
+
+                </span>
+
+
+            </div>
+
+
+
+            <!-- =================================================
+                 FRIEND 2 - MATIULLAH ZHAMAN
+            ================================================== -->
+
+            <div class="card friend-card">
+
+
+                <div class="friend-image-wrapper">
+
+                    <img
+                        src="zhaman.jpeg"
+                        alt="Matiullah Zhaman"
+                        class="friend-image"
+                    >
+
+                </div>
+
+
+                <h3>
+
+                    Matiullah Zhaman
+
+                </h3>
+
+
+                <p>
+
+                    12th Grade Graduate & Businessman
+
+                </p>
+
+
+                <span class="friend-role">
+
+                    Business
+
+                </span>
+
+
+            </div>
+
+
+
+            <!-- =================================================
+                 FRIEND 3 - BILAL NIHAL
+            ================================================== -->
+
+            <div class="card friend-card">
+
+
+                <div class="friend-image-wrapper">
+
+                    <img
+                        src="nihal.jpeg"
+                        alt="Bilal Nihal"
+                        class="friend-image"
+                    >
+
+                </div>
+
+
+                <h3>
+
+                    Bilal Nihal
+
+                </h3>
+
+
+                <p>
+
+                    English Literature
+
+                </p>
+
+
+                <span class="friend-role">
+
+                    English Literature
+
+                </span>
+
+
+            </div>
+
+
+
+            <!-- =================================================
+                 FRIEND 4 - ISMAIL SHAFAQ
+            ================================================== -->
+
+            <div class="card friend-card">
+
+
+                <div class="friend-image-wrapper">
+
+                    <img
+                        src="shafaq.jpeg"
+                        alt="Ismail Shafaq"
+                        class="friend-image"
+                    >
+
+                </div>
+
+
+                <h3>
+
+                    Ismail Shafaq
+
+                </h3>
+
+
+                <p>
+
+                    Nurse
+
+                </p>
+
+
+                <span class="friend-role">
+
+                    Healthcare
+
+                </span>
+
+
+            </div>
+
+
+
+            <!-- =================================================
+                 FRIEND 5 - HAZRAT MASHAAL
+            ================================================== -->
+
+            <div class="card friend-card">
+
+
+                <div class="friend-image-wrapper">
+
+                    <img
+                        src="mashaal.jpeg"
+                        alt="Hazrat Mashaal"
+                        class="friend-image"
+                    >
+
+                </div>
+
+
+                <h3>
+
+                    Hazrat Mashaal
+
+                </h3>
+
+
+                <p>
+
+                    Businessman & Economist
+
+                </p>
+
+
+                <span class="friend-role">
+
+                    Business & Economics
+
+                </span>
+
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     CONTACT
+===================================================== -->
+
+<section id="contact" class="contact-section">
+
+    <div class="container">
+
+
+        <div class="contact-box">
+
+
+            <div>
+
+                <h2>
+
+                    Let's Work Together
+
+                </h2>
+
+
+                <p>
+
+                    If you need a software system, website,
+                    database solution, or computer training,
+                    feel free to contact me.
+
+                </p>
+
+            </div>
+
+
+            <a
+                href="mailto:rn4868cs@gmail.com"
+                class="btn"
+            >
+
+                <i class="fa-solid fa-paper-plane"></i>
+
+                Get In Touch
+
+            </a>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer>
+
+    <div class="container footer-content">
+
+
         <p>
-            I am a Computer Science graduate with nearly five years of professional
-            experience in IT-related positions in Afghanistan. My experience includes
-            software and web development, databases, data management, digital
-            registration, field data collection, reporting, and computer training.
+
+            © 2026 Rahmatullah Naveed · Personal Profile
+
         </p>
-        <p>
-            I enjoy building practical software systems, learning new technologies,
-            and helping others develop useful computer and technology skills.
-        </p>
-    </section>
 
-    <section id="education">
-        <h2>Education</h2>
-        <div class="card">
-            <strong>Bachelor of Science in Computer Science</strong>
-            Shaikh Zayed University · 2017–2021
+
+        <div class="footer-socials">
+
+
+            <!-- LinkedIn -->
+
+            <a
+                href="https://www.linkedin.com/in/rahmatullah-naveed-2412b8331"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="social linkedin"
+                title="LinkedIn"
+            >
+
+                <i class="fa-brands fa-linkedin-in"></i>
+
+            </a>
+
+
+            <!-- Facebook -->
+
+            <a
+                href="https://www.facebook.com/share/1BnZhnywvd/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="social facebook"
+                title="Facebook"
+            >
+
+                <i class="fa-brands fa-facebook-f"></i>
+
+            </a>
+
+
+            <!-- WhatsApp -->
+
+            <a
+                href="https://wa.me/93792929097"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="social whatsapp"
+                title="WhatsApp"
+            >
+
+                <i class="fa-brands fa-whatsapp"></i>
+
+            </a>
+
+
+            <!-- Email -->
+
+            <a
+                href="mailto:rn4868cs@gmail.com"
+                class="social email-social"
+                title="Email"
+            >
+
+                <i class="fa-solid fa-envelope"></i>
+
+            </a>
+
+
         </div>
-    </section>
 
-    <section id="experience">
-        <h2>Professional Experience</h2>
-        <div class="grid">
-            <div class="card">
-                <strong>Assistant Project Manager — HAALO</strong>
-                WFP-related GFA & MCBP projects · Ghazni
-            </div>
-            <div class="card">
-                <strong>Scope / Data Officer — RHDO</strong>
-                WFP-related GFA project · Paktika
-            </div>
-            <div class="card">
-                <strong>Web & Database Developer — PIXEL Hub IT Solutions</strong>
-                Web development and database systems · Nangarhar
-            </div>
-            <div class="card">
-                <strong>Computer Instructor</strong>
-                Computer education and online teaching experience
-            </div>
-        </div>
-    </section>
+    </div>
 
-    <section id="skills">
-        <h2>Technical Skills</h2>
-        <div class="skills">
-            <span class="skill">Python</span>
-            <span class="skill">Flutter / Dart</span>
-            <span class="skill">Laravel / PHP</span>
-            <span class="skill">MySQL</span>
-            <span class="skill">HTML / CSS / JavaScript</span>
-            <span class="skill">Microsoft Office</span>
-            <span class="skill">MS Access / VBA</span>
-            <span class="skill">WordPress</span>
-            <span class="skill">Database Development</span>
-            <span class="skill">Web Development</span>
-            <span class="skill">Data Management</span>
-            <span class="skill">MIS</span>
-        </div>
-    </section>
+</footer>
 
-    <section>
-        <h2>What I Do</h2>
-        <div class="grid">
-            <div class="card"><strong>Software Development</strong>Desktop and web-based systems.</div>
-            <div class="card"><strong>Web Development</strong>Modern websites and business systems.</div>
-            <div class="card"><strong>Database Systems</strong>Design and development of practical databases.</div>
-            <div class="card"><strong>Computer Training</strong>Project-based computer and technology education.</div>
-        </div>
-    </section>
 
-    <section id="contact" class="contact">
-        <h2>Contact</h2>
-        <p>Email: <a href="mailto:rn4868cs@gmail.com">rn4868cs@gmail.com</a></p>
-        <p>Location: Paktika / Sharana, Afghanistan</p>
-        <p>
-            If you need a software system, website, database solution,
-            or computer training, feel free to contact me.
-        </p>
-    </section>
-
-    <footer>
-        © 2026 Rahmatullah Naveed · Personal Profile
-    </footer>
-</div>
 </body>
+
 </html>
