@@ -1,6 +1,6 @@
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
 
 <head>
 
@@ -9,17 +9,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <meta name="description"
-          content="Rahmatullah Naveed - Computer Science Graduate, Software Developer, IT Professional and Instructor">
-
-    <meta name="keywords"
-          content="Rahmatullah Naveed, Software Developer, Laravel Developer, Python Developer, Web Developer, Database Developer">
+          content="Rahmatullah Naveed - Software Developer, IT Professional, Database Developer and Journalist">
 
     <meta name="author" content="Rahmatullah Naveed">
 
     <title>Rahmatullah Naveed | Software Developer & IT Professional</title>
 
 
-    <!-- Google Font -->
+    <!-- =====================================================
+         GOOGLE FONT
+    ====================================================== -->
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
 
@@ -31,7 +30,9 @@
           rel="stylesheet">
 
 
-    <!-- Font Awesome -->
+    <!-- =====================================================
+         FONT AWESOME
+    ====================================================== -->
 
     <link rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
@@ -50,33 +51,28 @@
             scroll-behavior: smooth;
         }
 
-
         :root {
 
             --primary: #2563eb;
-
             --primary-dark: #1d4ed8;
-
             --secondary: #0f172a;
-
             --text: #334155;
-
             --muted: #64748b;
-
             --light: #f8fafc;
-
             --white: #ffffff;
-
             --border: #e2e8f0;
 
             --linkedin: #0a66c2;
-
             --facebook: #1877f2;
-
             --whatsapp: #25d366;
 
-        }
+            --success: #16a34a;
+            --warning: #f59e0b;
+            --purple: #7c3aed;
+            --cyan: #0891b2;
+            --pink: #db2777;
 
+        }
 
         body {
 
@@ -92,11 +88,33 @@
 
         }
 
+        body.rtl {
 
-        a {
-            text-decoration: none;
+            direction: rtl;
+
+            text-align: right;
+
         }
 
+        body.rtl .section-header {
+
+            text-align: right;
+
+        }
+
+        body.rtl .section-header p {
+
+            margin-right: 0;
+
+            margin-left: auto;
+
+        }
+
+        a {
+
+            text-decoration: none;
+
+        }
 
         img {
 
@@ -106,6 +124,11 @@
 
         }
 
+        button {
+
+            font-family: inherit;
+
+        }
 
         .container {
 
@@ -116,9 +139,33 @@
         }
 
 
+        /* =====================================================
+           SCROLL REVEAL
+        ===================================================== */
+
+        .reveal {
+
+            opacity: 0;
+
+            transform: translateY(35px);
+
+            transition:
+                opacity .8s ease,
+                transform .8s ease;
+
+        }
+
+        .reveal.active {
+
+            opacity: 1;
+
+            transform: translateY(0);
+
+        }
+
 
         /* =====================================================
-           NAVIGATION
+           NAVBAR
         ===================================================== */
 
         .navbar {
@@ -129,14 +176,21 @@
 
             z-index: 1000;
 
-            background: rgba(255,255,255,.92);
+            background: rgba(255,255,255,.94);
 
             backdrop-filter: blur(15px);
 
             border-bottom: 1px solid rgba(226,232,240,.8);
 
+            transition: .3s ease;
+
         }
 
+        .navbar.scrolled {
+
+            box-shadow: 0 8px 30px rgba(15,23,42,.08);
+
+        }
 
         .nav-content {
 
@@ -148,10 +202,9 @@
 
             justify-content: space-between;
 
-            gap: 30px;
+            gap: 20px;
 
         }
-
 
         .logo {
 
@@ -161,8 +214,9 @@
 
             color: var(--secondary);
 
-        }
+            white-space: nowrap;
 
+        }
 
         .logo span {
 
@@ -170,19 +224,17 @@
 
         }
 
-
         .nav-links {
 
             display: flex;
 
             align-items: center;
 
-            gap: 25px;
+            gap: 22px;
 
             list-style: none;
 
         }
-
 
         .nav-links a {
 
@@ -198,6 +250,11 @@
 
         }
 
+        .nav-links a:hover {
+
+            color: var(--primary);
+
+        }
 
         .nav-links a::after {
 
@@ -219,20 +276,89 @@
 
         }
 
-
-        .nav-links a:hover {
-
-            color: var(--primary);
-
-        }
-
-
         .nav-links a:hover::after {
 
             width: 100%;
 
         }
 
+
+        /* =====================================================
+           LANGUAGE
+        ===================================================== */
+
+        .language-switcher {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 6px;
+
+            border: 1px solid var(--border);
+
+            border-radius: 10px;
+
+            padding: 4px;
+
+            background: white;
+
+        }
+
+        .language-switcher button {
+
+            border: none;
+
+            background: transparent;
+
+            padding: 6px 9px;
+
+            border-radius: 7px;
+
+            cursor: pointer;
+
+            font-size: 12px;
+
+            font-weight: 700;
+
+            color: var(--muted);
+
+        }
+
+        .language-switcher button.active {
+
+            background: var(--primary);
+
+            color: white;
+
+        }
+
+
+        /* =====================================================
+           MOBILE MENU
+        ===================================================== */
+
+        .menu-toggle {
+
+            display: none;
+
+            width: 42px;
+
+            height: 42px;
+
+            border: 1px solid var(--border);
+
+            background: white;
+
+            color: var(--secondary);
+
+            border-radius: 10px;
+
+            cursor: pointer;
+
+            font-size: 19px;
+
+        }
 
 
         /* =====================================================
@@ -270,7 +396,6 @@
 
         }
 
-
         .hero::before {
 
             content: "";
@@ -292,7 +417,6 @@
             animation: floating 7s ease-in-out infinite;
 
         }
-
 
         .hero::after {
 
@@ -316,7 +440,6 @@
 
         }
 
-
         .hero-grid {
 
             position: relative;
@@ -333,11 +456,6 @@
 
         }
 
-
-        /* =====================================================
-           PROFILE IMAGE
-        ===================================================== */
-
         .profile-wrapper {
 
             position: relative;
@@ -349,7 +467,6 @@
             margin: auto;
 
         }
-
 
         .profile-wrapper::before {
 
@@ -367,7 +484,6 @@
 
         }
 
-
         .profile-wrapper::after {
 
             content: "";
@@ -384,7 +500,6 @@
 
         }
 
-
         .profile-image {
 
             width: 100%;
@@ -397,7 +512,7 @@
 
             border-radius: 50%;
 
-            border: 7px solid var(--white);
+            border: 7px solid white;
 
             box-shadow:
 
@@ -412,7 +527,6 @@
             animation: profileFloat 5s ease-in-out infinite;
 
         }
-
 
         .status {
 
@@ -434,13 +548,9 @@
 
             border-radius: 50%;
 
+            box-shadow: 0 0 0 5px rgba(22,163,74,.15);
+
         }
-
-
-
-        /* =====================================================
-           HERO CONTENT
-        ===================================================== */
 
         .hero-badge {
 
@@ -464,8 +574,9 @@
 
             margin-bottom: 18px;
 
-        }
+            animation: pulseBadge 2.5s infinite;
 
+        }
 
         .hero h1 {
 
@@ -481,13 +592,11 @@
 
         }
 
-
         .hero h1 span {
 
             color: var(--primary);
 
         }
-
 
         .hero-title {
 
@@ -501,7 +610,6 @@
 
         }
 
-
         .hero-description {
 
             max-width: 680px;
@@ -513,7 +621,6 @@
             margin-bottom: 30px;
 
         }
-
 
         .hero-buttons {
 
@@ -528,7 +635,6 @@
             margin-bottom: 25px;
 
         }
-
 
         .btn {
 
@@ -552,7 +658,6 @@
 
         }
 
-
         .btn-primary {
 
             background: var(--primary);
@@ -563,17 +668,13 @@
 
         }
 
-
         .btn-primary:hover {
 
             background: var(--primary-dark);
 
             transform: translateY(-3px);
 
-            box-shadow: 0 12px 25px rgba(37,99,235,.35);
-
         }
-
 
         .btn-outline {
 
@@ -584,7 +685,6 @@
             background: white;
 
         }
-
 
         .btn-outline:hover {
 
@@ -597,9 +697,8 @@
         }
 
 
-
         /* =====================================================
-           SOCIAL LINKS
+           SOCIAL
         ===================================================== */
 
         .social-links {
@@ -611,7 +710,6 @@
             gap: 10px;
 
         }
-
 
         .social {
 
@@ -635,13 +733,11 @@
 
         }
 
-
         .social:hover {
 
             transform: translateY(-5px) scale(1.05);
 
         }
-
 
         .linkedin {
 
@@ -649,20 +745,17 @@
 
         }
 
-
         .facebook {
 
             background: var(--facebook);
 
         }
 
-
         .whatsapp {
 
             background: var(--whatsapp);
 
         }
-
 
         .email-social {
 
@@ -671,9 +764,8 @@
         }
 
 
-
         /* =====================================================
-           GENERAL SECTIONS
+           GENERAL
         ===================================================== */
 
         section {
@@ -682,7 +774,6 @@
 
         }
 
-
         .section-header {
 
             text-align: center;
@@ -690,7 +781,6 @@
             margin-bottom: 45px;
 
         }
-
 
         .section-header span {
 
@@ -710,7 +800,6 @@
 
         }
 
-
         .section-header h2 {
 
             font-size: 34px;
@@ -721,17 +810,15 @@
 
         }
 
-
         .section-header p {
 
             color: var(--muted);
 
-            max-width: 650px;
+            max-width: 700px;
 
             margin: auto;
 
         }
-
 
         .card {
 
@@ -749,7 +836,6 @@
 
         }
 
-
         .card:hover {
 
             transform: translateY(-6px);
@@ -757,14 +843,6 @@
             box-shadow: 0 18px 45px rgba(15,23,42,.09);
 
         }
-
-
-        .card p + p {
-
-            margin-top: 18px;
-
-        }
-
 
 
         /* =====================================================
@@ -781,6 +859,11 @@
 
         }
 
+        .card p + p {
+
+            margin-top: 18px;
+
+        }
 
         .info-list {
 
@@ -792,7 +875,6 @@
 
         }
 
-
         .info-item {
 
             display: flex;
@@ -802,7 +884,6 @@
             gap: 13px;
 
         }
-
 
         .info-icon {
 
@@ -824,7 +905,6 @@
 
         }
 
-
         .info-item strong {
 
             display: block;
@@ -833,10 +913,7 @@
 
             font-size: 13px;
 
-            margin-bottom: 2px;
-
         }
-
 
         .info-item a,
 
@@ -851,17 +928,19 @@
         }
 
 
-        .info-item a:hover {
-
-            color: var(--primary);
-
-        }
-
-
-
         /* =====================================================
            EDUCATION
         ===================================================== */
+
+        .education-grid {
+
+            display: grid;
+
+            grid-template-columns: repeat(2,1fr);
+
+            gap: 22px;
+
+        }
 
         .education-card {
 
@@ -871,8 +950,31 @@
 
             gap: 20px;
 
+            position: relative;
+
+            overflow: hidden;
+
         }
 
+        .education-card::after {
+
+            content: "";
+
+            position: absolute;
+
+            width: 120px;
+
+            height: 120px;
+
+            border-radius: 50%;
+
+            background: rgba(37,99,235,.05);
+
+            right: -40px;
+
+            bottom: -40px;
+
+        }
 
         .large-icon {
 
@@ -896,7 +998,6 @@
 
         }
 
-
         .education-card h3 {
 
             color: var(--secondary);
@@ -907,7 +1008,6 @@
 
         }
 
-
         .education-card p {
 
             color: var(--muted);
@@ -916,6 +1016,205 @@
 
         }
 
+        .education-tag {
+
+            display: inline-flex;
+
+            align-items: center;
+
+            gap: 6px;
+
+            margin-top: 10px;
+
+            padding: 5px 10px;
+
+            background: #eff6ff;
+
+            color: var(--primary);
+
+            border-radius: 20px;
+
+            font-size: 11px;
+
+            font-weight: 700;
+
+        }
+
+
+        /* =====================================================
+           CERTIFICATES
+        ===================================================== */
+
+        .certificate-wrapper {
+
+            overflow-x: auto;
+
+            background: white;
+
+            border-radius: 20px;
+
+            box-shadow: 0 10px 35px rgba(15,23,42,.05);
+
+            border: 1px solid var(--border);
+
+        }
+
+        .certificate-table {
+
+            width: 100%;
+
+            border-collapse: collapse;
+
+            min-width: 800px;
+
+        }
+
+        .certificate-table th,
+
+        .certificate-table td {
+
+            border: 1px solid #cbd5e1;
+
+            padding: 13px 12px;
+
+            text-align: left;
+
+            vertical-align: top;
+
+            font-size: 14px;
+
+        }
+
+        .certificate-table th {
+
+            background: #eff6ff;
+
+            color: var(--secondary);
+
+            font-weight: 800;
+
+        }
+
+        .certificate-table td:first-child {
+
+            font-weight: 700;
+
+            color: var(--secondary);
+
+        }
+
+        body.rtl .certificate-table th,
+
+        body.rtl .certificate-table td {
+
+            text-align: right;
+
+        }
+
+
+        /* =====================================================
+           TRAININGS
+        ===================================================== */
+
+        .training-grid {
+
+            display: grid;
+
+            grid-template-columns: repeat(3,1fr);
+
+            gap: 20px;
+
+        }
+
+        .training-card {
+
+            position: relative;
+
+            overflow: hidden;
+
+        }
+
+        .training-card::before {
+
+            content: "";
+
+            position: absolute;
+
+            left: 0;
+
+            top: 0;
+
+            width: 4px;
+
+            height: 100%;
+
+            background: linear-gradient(
+                to bottom,
+                var(--primary),
+                #0ea5e9
+            );
+
+        }
+
+        .training-icon {
+
+            width: 55px;
+
+            height: 55px;
+
+            border-radius: 15px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            background: #eff6ff;
+
+            color: var(--primary);
+
+            font-size: 22px;
+
+            margin-bottom: 16px;
+
+        }
+
+        .training-card h3 {
+
+            color: var(--secondary);
+
+            font-size: 16px;
+
+            margin-bottom: 7px;
+
+        }
+
+        .training-card p {
+
+            color: var(--muted);
+
+            font-size: 13px;
+
+        }
+
+        .training-provider {
+
+            display: inline-flex;
+
+            align-items: center;
+
+            gap: 6px;
+
+            margin-top: 12px;
+
+            color: var(--primary);
+
+            font-size: 11px;
+
+            font-weight: 800;
+
+        }
 
 
         /* =====================================================
@@ -932,7 +1231,6 @@
 
         }
 
-
         .experience-card {
 
             position: relative;
@@ -940,7 +1238,6 @@
             overflow: hidden;
 
         }
-
 
         .experience-card::before {
 
@@ -960,7 +1257,6 @@
 
         }
 
-
         .experience-top {
 
             display: flex;
@@ -970,7 +1266,6 @@
             gap: 15px;
 
         }
-
 
         .experience-icon {
 
@@ -992,7 +1287,6 @@
 
         }
 
-
         .experience-card h3 {
 
             color: var(--secondary);
@@ -1002,7 +1296,6 @@
             margin-bottom: 4px;
 
         }
-
 
         .experience-card .company {
 
@@ -1014,6 +1307,23 @@
 
         }
 
+        .experience-location {
+
+            display: inline-flex;
+
+            align-items: center;
+
+            gap: 5px;
+
+            margin-top: 8px;
+
+            color: var(--muted);
+
+            font-size: 11px;
+
+            font-weight: 700;
+
+        }
 
         .experience-card p {
 
@@ -1024,7 +1334,6 @@
             margin-top: 10px;
 
         }
-
 
 
         /* =====================================================
@@ -1042,7 +1351,6 @@
             gap: 12px;
 
         }
-
 
         .skill {
 
@@ -1070,13 +1378,11 @@
 
         }
 
-
         .skill i {
 
             color: var(--primary);
 
         }
-
 
         .skill:hover {
 
@@ -1086,10 +1392,184 @@
 
             transform: translateY(-3px);
 
-            box-shadow: 0 8px 20px rgba(37,99,235,.10);
+        }
+
+
+        /* =====================================================
+           ACHIEVEMENTS
+        ===================================================== */
+
+        .achievement-stats {
+
+            display: grid;
+
+            grid-template-columns: repeat(4,1fr);
+
+            gap: 18px;
+
+            margin-bottom: 30px;
 
         }
 
+        .stat-card {
+
+            background: white;
+
+            border: 1px solid var(--border);
+
+            border-radius: 18px;
+
+            padding: 25px 18px;
+
+            text-align: center;
+
+            box-shadow: 0 10px 35px rgba(15,23,42,.05);
+
+            transition: .35s ease;
+
+        }
+
+        .stat-card:hover {
+
+            transform: translateY(-7px);
+
+            box-shadow: 0 18px 40px rgba(15,23,42,.10);
+
+        }
+
+        .stat-icon {
+
+            width: 52px;
+
+            height: 52px;
+
+            margin: 0 auto 12px;
+
+            border-radius: 15px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            background: #eff6ff;
+
+            color: var(--primary);
+
+            font-size: 21px;
+
+        }
+
+        .stat-number {
+
+            font-size: 30px;
+
+            line-height: 1;
+
+            color: var(--secondary);
+
+            font-weight: 800;
+
+        }
+
+        .stat-label {
+
+            color: var(--muted);
+
+            font-size: 12px;
+
+            margin-top: 7px;
+
+        }
+
+        .achievements-grid {
+
+            display: grid;
+
+            grid-template-columns: repeat(2,1fr);
+
+            gap: 20px;
+
+        }
+
+        .achievement-card {
+
+            position: relative;
+
+            overflow: hidden;
+
+            display: flex;
+
+            gap: 18px;
+
+            align-items: flex-start;
+
+        }
+
+        .achievement-icon {
+
+            min-width: 55px;
+
+            height: 55px;
+
+            border-radius: 15px;
+
+            background: linear-gradient(
+                135deg,
+                #dbeafe,
+                #eff6ff
+            );
+
+            color: var(--primary);
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            font-size: 22px;
+
+        }
+
+        .achievement-card h3 {
+
+            color: var(--secondary);
+
+            font-size: 17px;
+
+            margin-bottom: 6px;
+
+        }
+
+        .achievement-card p {
+
+            color: var(--muted);
+
+            font-size: 13px;
+
+        }
+
+        .achievement-card .achievement-tag {
+
+            display: inline-block;
+
+            margin-top: 10px;
+
+            padding: 4px 9px;
+
+            border-radius: 20px;
+
+            background: #eff6ff;
+
+            color: var(--primary);
+
+            font-size: 10px;
+
+            font-weight: 800;
+
+        }
 
 
         /* =====================================================
@@ -1106,13 +1586,11 @@
 
         }
 
-
         .service {
 
             text-align: center;
 
         }
-
 
         .service-icon {
 
@@ -1136,8 +1614,15 @@
 
             font-size: 24px;
 
+            transition: .35s ease;
+
         }
 
+        .service:hover .service-icon {
+
+            transform: rotateY(180deg);
+
+        }
 
         .service h3 {
 
@@ -1149,7 +1634,6 @@
 
         }
 
-
         .service p {
 
             color: var(--muted);
@@ -1158,6 +1642,94 @@
 
         }
 
+
+        /* =====================================================
+           PROJECTS
+        ===================================================== */
+
+        .projects-grid {
+
+            display: grid;
+
+            grid-template-columns: repeat(3,1fr);
+
+            gap: 20px;
+
+        }
+
+        .project-card {
+
+            position: relative;
+
+            overflow: hidden;
+
+        }
+
+        .project-icon {
+
+            width: 58px;
+
+            height: 58px;
+
+            border-radius: 15px;
+
+            background: #eff6ff;
+
+            color: var(--primary);
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            font-size: 23px;
+
+            margin-bottom: 18px;
+
+        }
+
+        .project-card h3 {
+
+            color: var(--secondary);
+
+            font-size: 17px;
+
+            margin-bottom: 8px;
+
+        }
+
+        .project-card p {
+
+            color: var(--muted);
+
+            font-size: 14px;
+
+        }
+
+        .project-location {
+
+            display: inline-flex;
+
+            align-items: center;
+
+            gap: 5px;
+
+            margin-top: 12px;
+
+            padding: 5px 10px;
+
+            border-radius: 20px;
+
+            background: #eff6ff;
+
+            color: var(--primary);
+
+            font-size: 11px;
+
+            font-weight: 700;
+
+        }
 
 
         /* =====================================================
@@ -1170,7 +1742,6 @@
 
         }
 
-
         .friends-grid {
 
             display: grid;
@@ -1180,7 +1751,6 @@
             gap: 20px;
 
         }
-
 
         .friend-card {
 
@@ -1193,7 +1763,6 @@
             overflow: hidden;
 
         }
-
 
         .friend-card::before {
 
@@ -1213,19 +1782,15 @@
 
             transform: scaleX(0);
 
-            transform-origin: center;
-
             transition: .35s ease;
 
         }
-
 
         .friend-card:hover::before {
 
             transform: scaleX(1);
 
         }
-
 
         .friend-image-wrapper {
 
@@ -1249,7 +1814,6 @@
 
         }
 
-
         .friend-card:hover .friend-image-wrapper {
 
             transform: translateY(-6px) scale(1.05);
@@ -1257,7 +1821,6 @@
             box-shadow: 0 15px 30px rgba(37,99,235,.20);
 
         }
-
 
         .friend-image {
 
@@ -1273,7 +1836,6 @@
 
         }
 
-
         .friend-card h3 {
 
             color: var(--secondary);
@@ -1284,17 +1846,13 @@
 
         }
 
-
         .friend-card p {
 
             color: var(--muted);
 
             font-size: 13px;
 
-            line-height: 1.6;
-
         }
-
 
         .friend-role {
 
@@ -1317,7 +1875,6 @@
         }
 
 
-
         /* =====================================================
            CONTACT
         ===================================================== */
@@ -1328,21 +1885,18 @@
 
         }
 
-
         .contact-box {
 
             position: relative;
 
             overflow: hidden;
 
-            background:
-
-                linear-gradient(
-                    135deg,
-                    #1d4ed8,
-                    #2563eb,
-                    #0ea5e9
-                );
+            background: linear-gradient(
+                135deg,
+                #1d4ed8,
+                #2563eb,
+                #0ea5e9
+            );
 
             color: white;
 
@@ -1362,27 +1916,25 @@
 
         }
 
-
-        .contact-box::after {
+        .contact-box::before {
 
             content: "";
 
             position: absolute;
 
-            width: 250px;
+            width: 220px;
 
-            height: 250px;
+            height: 220px;
+
+            border: 1px solid rgba(255,255,255,.18);
 
             border-radius: 50%;
 
-            border: 1px solid rgba(255,255,255,.15);
+            right: -80px;
 
-            right: -70px;
-
-            top: -100px;
+            top: -80px;
 
         }
-
 
         .contact-box h2 {
 
@@ -1392,7 +1944,6 @@
 
         }
 
-
         .contact-box p {
 
             max-width: 650px;
@@ -1400,7 +1951,6 @@
             opacity: .9;
 
         }
-
 
         .contact-box .btn {
 
@@ -1415,14 +1965,6 @@
             z-index: 2;
 
         }
-
-
-        .contact-box .btn:hover {
-
-            transform: translateY(-3px);
-
-        }
-
 
 
         /* =====================================================
@@ -1441,7 +1983,6 @@
 
         }
 
-
         .footer-content {
 
             display: flex;
@@ -1454,13 +1995,11 @@
 
         }
 
-
         .footer-content p {
 
             font-size: 13px;
 
         }
-
 
         .footer-socials {
 
@@ -1469,7 +2008,6 @@
             gap: 8px;
 
         }
-
 
         .footer-socials .social {
 
@@ -1482,7 +2020,6 @@
         }
 
 
-
         /* =====================================================
            ANIMATIONS
         ===================================================== */
@@ -1490,70 +2027,62 @@
         @keyframes floating {
 
             0%,100% {
-
                 transform: translateY(0);
-
             }
 
             50% {
-
                 transform: translateY(20px);
-
             }
 
         }
-
 
         @keyframes profileFloat {
 
             0%,100% {
-
                 transform: translateY(0);
-
             }
 
             50% {
-
                 transform: translateY(-8px);
-
             }
 
         }
-
 
         @keyframes rotate {
 
             from {
-
                 transform: rotate(0deg);
-
             }
 
             to {
-
                 transform: rotate(360deg);
-
             }
 
         }
-
 
         @keyframes rotateReverse {
 
             from {
-
                 transform: rotate(360deg);
-
             }
 
             to {
-
                 transform: rotate(0deg);
-
             }
 
         }
 
+        @keyframes pulseBadge {
+
+            0%,100% {
+                box-shadow: 0 0 0 0 rgba(37,99,235,.15);
+            }
+
+            50% {
+                box-shadow: 0 0 0 8px rgba(37,99,235,0);
+            }
+
+        }
 
 
         /* =====================================================
@@ -1565,6 +2094,18 @@
             .friends-grid {
 
                 grid-template-columns: repeat(3,1fr);
+
+            }
+
+            .projects-grid {
+
+                grid-template-columns: repeat(2,1fr);
+
+            }
+
+            .training-grid {
+
+                grid-template-columns: repeat(2,1fr);
 
             }
 
@@ -1581,7 +2122,6 @@
 
             }
 
-
             .hero-description {
 
                 margin-left: auto;
@@ -1590,7 +2130,6 @@
 
             }
 
-
             .hero-buttons,
             .social-links {
 
@@ -1598,15 +2137,25 @@
 
             }
 
-
             .about-grid {
 
                 grid-template-columns: 1fr;
 
             }
 
-
             .services-grid {
+
+                grid-template-columns: repeat(2,1fr);
+
+            }
+
+            .education-grid {
+
+                grid-template-columns: 1fr;
+
+            }
+
+            .achievement-stats {
 
                 grid-template-columns: repeat(2,1fr);
 
@@ -1615,21 +2164,137 @@
         }
 
 
-        @media (max-width: 750px) {
+        /* =====================================================
+           MOBILE NAVIGATION
+        ===================================================== */
+
+        @media (max-width: 800px) {
+
+            .menu-toggle {
+
+                display: flex;
+
+                align-items: center;
+
+                justify-content: center;
+
+            }
+
+            .nav-content {
+
+                position: relative;
+
+            }
 
             .nav-links {
 
                 display: none;
 
+                position: absolute;
+
+                top: 70px;
+
+                left: 0;
+
+                right: 0;
+
+                background: white;
+
+                padding: 15px;
+
+                border-radius: 0 0 15px 15px;
+
+                box-shadow: 0 15px 30px rgba(15,23,42,.12);
+
+                flex-direction: column;
+
+                align-items: stretch;
+
+                gap: 4px;
+
             }
 
+            .nav-links.show {
+
+                display: flex;
+
+                animation: menuOpen .25s ease;
+
+            }
+
+            .nav-links li {
+
+                width: 100%;
+
+            }
+
+            .nav-links a {
+
+                display: block;
+
+                padding: 11px 12px;
+
+                border-radius: 8px;
+
+            }
+
+            .nav-links a:hover {
+
+                background: #eff6ff;
+
+            }
+
+            .nav-links a::after {
+
+                display: none;
+
+            }
+
+            .language-switcher {
+
+                margin-left: auto;
+
+            }
+
+            body.rtl .language-switcher {
+
+                margin-left: 0;
+
+                margin-right: auto;
+
+            }
+
+        }
+
+
+        @keyframes menuOpen {
+
+            from {
+
+                opacity: 0;
+
+                transform: translateY(-8px);
+
+            }
+
+            to {
+
+                opacity: 1;
+
+                transform: translateY(0);
+
+            }
+
+        }
+
+
+        @media (max-width: 750px) {
 
             .hero {
 
                 padding: 70px 0;
 
             }
-
 
             .profile-wrapper {
 
@@ -1639,13 +2304,11 @@
 
             }
 
-
             .experience-grid {
 
                 grid-template-columns: 1fr;
 
             }
-
 
             .friends-grid {
 
@@ -1653,6 +2316,23 @@
 
             }
 
+            .projects-grid {
+
+                grid-template-columns: 1fr;
+
+            }
+
+            .training-grid {
+
+                grid-template-columns: 1fr;
+
+            }
+
+            .achievements-grid {
+
+                grid-template-columns: 1fr;
+
+            }
 
             .contact-box {
 
@@ -1663,7 +2343,6 @@
                 padding: 35px 25px;
 
             }
-
 
             .footer-content {
 
@@ -1684,6 +2363,11 @@
 
             }
 
+            .logo {
+
+                font-size: 18px;
+
+            }
 
             .hero h1 {
 
@@ -1691,13 +2375,11 @@
 
             }
 
-
             .hero-title {
 
                 font-size: 17px;
 
             }
-
 
             section {
 
@@ -1705,13 +2387,11 @@
 
             }
 
-
             .section-header h2 {
 
                 font-size: 28px;
 
             }
-
 
             .services-grid {
 
@@ -1719,20 +2399,23 @@
 
             }
 
-
             .friends-grid {
 
                 grid-template-columns: 1fr;
 
             }
 
+            .achievement-stats {
+
+                grid-template-columns: 1fr 1fr;
+
+            }
 
             .card {
 
                 padding: 22px;
 
             }
-
 
             .hero-buttons {
 
@@ -1742,10 +2425,15 @@
 
             }
 
-
             .hero-buttons .btn {
 
                 width: 100%;
+
+            }
+
+            .achievement-card {
+
+                flex-direction: column;
 
             }
 
@@ -1763,9 +2451,10 @@
      NAVIGATION
 ===================================================== -->
 
-<nav class="navbar">
+<nav class="navbar" id="navbar">
 
     <div class="container nav-content">
+
 
         <a href="#home" class="logo">
 
@@ -1774,41 +2463,100 @@
         </a>
 
 
-        <ul class="nav-links">
+        <ul class="nav-links" id="navLinks">
 
             <li>
-                <a href="#home">Home</a>
+                <a href="#home" data-en="Home" data-ps="کور">
+                    Home
+                </a>
             </li>
 
             <li>
-                <a href="#about">About</a>
+                <a href="#about" data-en="About" data-ps="زما په اړه">
+                    About
+                </a>
             </li>
 
             <li>
-                <a href="#education">Education</a>
+                <a href="#education" data-en="Education" data-ps="زده کړې">
+                    Education
+                </a>
             </li>
 
             <li>
-                <a href="#experience">Experience</a>
+                <a href="#training" data-en="Training" data-ps="روزنې">
+                    Training
+                </a>
             </li>
 
             <li>
-                <a href="#skills">Skills</a>
+                <a href="#experience" data-en="Experience" data-ps="کاري تجربه">
+                    Experience
+                </a>
             </li>
 
             <li>
-                <a href="#services">Services</a>
+                <a href="#achievements" data-en="Achievements" data-ps="لاسته راوړنې">
+                    Achievements
+                </a>
             </li>
 
             <li>
-                <a href="#friends">Friends</a>
+                <a href="#skills" data-en="Skills" data-ps="مهارتونه">
+                    Skills
+                </a>
             </li>
 
             <li>
-                <a href="#contact">Contact</a>
+                <a href="#services" data-en="Services" data-ps="خدمتونه">
+                    Services
+                </a>
+            </li>
+
+            <li>
+                <a href="#projects" data-en="Projects" data-ps="جوړ شوي سیستمونه">
+                    Projects
+                </a>
+            </li>
+
+            <li>
+                <a href="#friends" data-en="Friends" data-ps="ملګري">
+                    Friends
+                </a>
+            </li>
+
+            <li>
+                <a href="#contact" data-en="Contact" data-ps="اړیکه">
+                    Contact
+                </a>
             </li>
 
         </ul>
+
+
+        <div class="language-switcher">
+
+            <button id="enBtn" class="active">
+                EN
+            </button>
+
+            <button id="psBtn">
+                پښتو
+            </button>
+
+        </div>
+
+
+        <button
+            class="menu-toggle"
+            id="menuToggle"
+            aria-label="Open menu"
+        >
+
+            <i class="fa-solid fa-bars"></i>
+
+        </button>
+
 
     </div>
 
@@ -1825,8 +2573,6 @@
     <div class="container hero-grid">
 
 
-        <!-- PROFILE IMAGE -->
-
         <div class="profile-wrapper">
 
             <img
@@ -1840,15 +2586,18 @@
         </div>
 
 
-        <!-- HERO CONTENT -->
-
         <div>
 
             <div class="hero-badge">
 
                 <i class="fa-solid fa-hand"></i>
 
-                Hello, I am
+                <span
+                    data-en="Hello, I am"
+                    data-ps="سلام، زه یم"
+                >
+                    Hello, I am
+                </span>
 
             </div>
 
@@ -1860,22 +2609,25 @@
             </h1>
 
 
-            <div class="hero-title">
+            <div
+                class="hero-title"
+                data-en="Computer Science Graduate · Software Developer · IT Professional · Instructor"
+                data-ps="د کمپیوټر ساینس فارغ · سافټویر جوړونکی · د معلوماتي ټکنالوژۍ مسلکي · ښوونکی"
+            >
 
-                Computer Science Graduate ·
-                Software Developer ·
-                IT Professional ·
-                Instructor
+                Computer Science Graduate · Software Developer · IT Professional · Instructor
 
             </div>
 
 
-            <p class="hero-description">
+            <p
+                class="hero-description"
+                data-en="I build practical software systems, modern websites, database solutions, and useful technology-based solutions. I also enjoy sharing knowledge through computer training and practical learning."
+                data-ps="زه عملي سافټویر سیستمونه، عصري ویبپاڼې، ډیټابېسونه او د ټکنالوژۍ پر بنسټ ګټور سیستمونه جوړوم. همدارنګه د کمپیوټر د زده کړې او عملي روزنې له لارې د خپلې پوهې له شریکولو سره مینه لرم."
+            >
 
                 I build practical software systems, modern websites,
                 database solutions, and useful technology-based solutions.
-                I also enjoy sharing knowledge through computer training
-                and practical learning.
 
             </p>
 
@@ -1886,7 +2638,12 @@
 
                     <i class="fa-solid fa-envelope"></i>
 
-                    Contact Me
+                    <span
+                        data-en="Contact Me"
+                        data-ps="له ما سره اړیکه"
+                    >
+                        Contact Me
+                    </span>
 
                 </a>
 
@@ -1895,19 +2652,19 @@
 
                     <i class="fa-solid fa-user"></i>
 
-                    About Me
+                    <span
+                        data-en="About Me"
+                        data-ps="زما په اړه"
+                    >
+                        About Me
+                    </span>
 
                 </a>
 
             </div>
 
 
-            <!-- SOCIAL LINKS -->
-
             <div class="social-links">
-
-
-                <!-- LinkedIn -->
 
                 <a
                     href="https://www.linkedin.com/in/rahmatullah-naveed-2412b8331"
@@ -1916,13 +2673,9 @@
                     class="social linkedin"
                     title="LinkedIn"
                 >
-
                     <i class="fa-brands fa-linkedin-in"></i>
-
                 </a>
 
-
-                <!-- Facebook -->
 
                 <a
                     href="https://www.facebook.com/share/1BnZhnywvd/"
@@ -1931,13 +2684,9 @@
                     class="social facebook"
                     title="Facebook"
                 >
-
                     <i class="fa-brands fa-facebook-f"></i>
-
                 </a>
 
-
-                <!-- WhatsApp -->
 
                 <a
                     href="https://wa.me/93792929097"
@@ -1946,22 +2695,16 @@
                     class="social whatsapp"
                     title="WhatsApp"
                 >
-
                     <i class="fa-brands fa-whatsapp"></i>
-
                 </a>
 
-
-                <!-- Email -->
 
                 <a
                     href="mailto:rn4868cs@gmail.com"
                     class="social email-social"
                     title="Email"
                 >
-
                     <i class="fa-solid fa-envelope"></i>
-
                 </a>
 
             </div>
@@ -1978,23 +2721,32 @@
      ABOUT
 ===================================================== -->
 
-<section id="about">
+<section id="about" class="reveal">
 
     <div class="container">
 
-
         <div class="section-header">
 
-            <span>About Me</span>
+            <span
+                data-en="About Me"
+                data-ps="زما په اړه"
+            >
+                About Me
+            </span>
 
-            <h2>Who I Am</h2>
+            <h2
+                data-en="Who I Am"
+                data-ps="زه څوک یم؟"
+            >
+                Who I Am
+            </h2>
 
-            <p>
-
-                A Computer Science graduate with professional
-                experience in IT, software development, databases,
-                data management and computer training.
-
+            <p
+                data-en="A Computer Science graduate with professional experience in IT, software development, databases, data management and computer training."
+                data-ps="د کمپیوټر ساینس فارغ یم او د معلوماتي ټکنالوژۍ، سافټویر جوړونې، ډیټابېس، معلوماتو مدیریت او کمپیوټري زده کړو په برخو کې مسلکي تجربه لرم."
+            >
+                A Computer Science graduate with professional experience in IT,
+                software development, databases, data management and computer training.
             </p>
 
         </div>
@@ -2002,33 +2754,33 @@
 
         <div class="about-grid">
 
-
             <div class="card">
 
-                <p>
-
-                    I am a Computer Science graduate with nearly five years
-                    of professional experience in IT-related positions in
-                    Afghanistan.
-
+                <p
+                    data-en="I am a Computer Science graduate with professional experience in IT-related positions in Afghanistan."
+                    data-ps="زه د کمپیوټر ساینس فارغ یم او په افغانستان کې د معلوماتي ټکنالوژۍ په بېلابېلو برخو کې کاري تجربه لرم."
+                >
+                    I am a Computer Science graduate with professional experience
+                    in IT-related positions in Afghanistan.
                 </p>
 
 
-                <p>
-
+                <p
+                    data-en="My experience includes software and web development, databases, data management, digital registration, field data collection, reporting, journalism and computer training."
+                    data-ps="زما په کاري تجربه کې د سافټویر او ویب جوړونه، ډیټابېسونه، د معلوماتو مدیریت، ډیجیټل ثبت، ساحوي معلوماتو راټولول، راپور ورکول، ژورنالیزم او کمپیوټري زده کړې شاملې دي."
+                >
                     My experience includes software and web development,
                     databases, data management, digital registration,
-                    field data collection, reporting, and computer training.
-
+                    field data collection, reporting, journalism and computer training.
                 </p>
 
 
-                <p>
-
-                    I enjoy building practical software systems, learning
-                    new technologies, and helping others develop useful
-                    computer and technology skills.
-
+                <p
+                    data-en="I enjoy building practical software systems, learning new technologies, and creating useful digital solutions."
+                    data-ps="زه د عملي سافټویر سیستمونو له جوړولو، د نوې ټکنالوژۍ له زده کړې او د ګټورو ډیجیټلي حللارو له جوړولو سره مینه لرم."
+                >
+                    I enjoy building practical software systems,
+                    learning new technologies, and creating useful digital solutions.
                 </p>
 
             </div>
@@ -2039,33 +2791,29 @@
                 <div class="info-list">
 
 
-                    <!-- EMAIL -->
-
                     <div class="info-item">
 
                         <div class="info-icon">
-
                             <i class="fa-solid fa-envelope"></i>
-
                         </div>
-
 
                         <div>
 
-                            <strong>Email</strong>
+                            <strong
+                                data-en="Email"
+                                data-ps="برېښنالیک"
+                            >
+                                Email
+                            </strong>
 
                             <a href="mailto:rn4868cs@gmail.com">
-
                                 rn4868cs@gmail.com
-
                             </a>
 
                             <br>
 
                             <a href="mailto:rahmatn2@outlook.com">
-
                                 rahmatn2@outlook.com
-
                             </a>
 
                         </div>
@@ -2073,34 +2821,29 @@
                     </div>
 
 
-
-                    <!-- PHONE -->
-
                     <div class="info-item">
 
                         <div class="info-icon">
-
                             <i class="fa-solid fa-phone"></i>
-
                         </div>
-
 
                         <div>
 
-                            <strong>Phone</strong>
+                            <strong
+                                data-en="Phone"
+                                data-ps="ټیلیفون"
+                            >
+                                Phone
+                            </strong>
 
                             <a href="tel:+93792929097">
-
                                 0792929097
-
                             </a>
 
                             <br>
 
                             <a href="tel:+93764964868">
-
                                 0764964868
-
                             </a>
 
                         </div>
@@ -2108,38 +2851,35 @@
                     </div>
 
 
-
-                    <!-- WHATSAPP -->
-
                     <div class="info-item">
 
                         <div class="info-icon">
-
                             <i class="fa-brands fa-whatsapp"></i>
-
                         </div>
-
 
                         <div>
 
-                            <strong>WhatsApp</strong>
+                            <strong
+                                data-en="WhatsApp"
+                                data-ps="واټساپ"
+                            >
+                                WhatsApp
+                            </strong>
 
                             <a
                                 href="https://wa.me/93792929097"
                                 target="_blank"
-                                rel="noopener noreferrer"
                             >
-
                                 0792929097
-
                             </a>
 
                             <br>
 
-                            <small>
-
+                            <small
+                                data-en="Click to chat directly"
+                                data-ps="د مستقیمې اړیکې لپاره کلیک وکړئ"
+                            >
                                 Click to chat directly
-
                             </small>
 
                         </div>
@@ -2147,26 +2887,26 @@
                     </div>
 
 
-
-                    <!-- LOCATION -->
-
                     <div class="info-item">
 
                         <div class="info-icon">
-
                             <i class="fa-solid fa-location-dot"></i>
-
                         </div>
-
 
                         <div>
 
-                            <strong>Location</strong>
+                            <strong
+                                data-en="Location"
+                                data-ps="ځای"
+                            >
+                                Location
+                            </strong>
 
-                            <span>
-
+                            <span
+                                data-en="Paktika / Sharana, Afghanistan"
+                                data-ps="پکتیکا / ښرنه، افغانستان"
+                            >
                                 Paktika / Sharana, Afghanistan
-
                             </span>
 
                         </div>
@@ -2190,44 +2930,1017 @@
      EDUCATION
 ===================================================== -->
 
-<section id="education">
+<section id="education" class="reveal">
 
     <div class="container">
 
         <div class="section-header">
 
-            <span>Education</span>
+            <span
+                data-en="Education"
+                data-ps="زده کړې"
+            >
+                Education
+            </span>
 
-            <h2>Academic Background</h2>
+            <h2
+                data-en="Academic Background"
+                data-ps="علمي زده کړې"
+            >
+                Academic Background
+            </h2>
+
+            <p
+                data-en="My academic journey from school education to university-level Computer Science."
+                data-ps="زما علمي سفر له ښوونځي څخه تر پوهنتون پورې."
+            >
+                My academic journey from school education to university-level Computer Science.
+            </p>
 
         </div>
 
 
-        <div class="card education-card">
+        <div class="education-grid">
 
-            <div class="large-icon">
 
-                <i class="fa-solid fa-graduation-cap"></i>
+            <!-- HIGH SCHOOL -->
+
+            <div class="card education-card">
+
+                <div class="large-icon">
+
+                    <i class="fa-solid fa-school"></i>
+
+                </div>
+
+
+                <div>
+
+                    <h3
+                        data-en="Mohammad Khil High School"
+                        data-ps="محمد خېلو عالي لیسه"
+                    >
+                        Mohammad Khil High School
+                    </h3>
+
+                    <p
+                        data-en="High School Graduate · 2016"
+                        data-ps="د عالي لیسې فارغ · ۲۰۱۶"
+                    >
+                        High School Graduate · 2016
+                    </p>
+
+                    <span class="education-tag">
+
+                        <i class="fa-solid fa-trophy"></i>
+
+                        <span
+                            data-en="Overall First-Rank Graduate"
+                            data-ps="عمومي اول نمره فارغ"
+                        >
+                            Overall First-Rank Graduate
+                        </span>
+
+                    </span>
+
+                </div>
 
             </div>
 
 
-            <div>
+            <!-- UNIVERSITY -->
 
-                <h3>
+            <div class="card education-card">
 
-                    Bachelor of Science in Computer Science
+                <div class="large-icon">
 
+                    <i class="fa-solid fa-graduation-cap"></i>
+
+                </div>
+
+
+                <div>
+
+                    <h3
+                        data-en="Bachelor of Science in Computer Science"
+                        data-ps="د کمپیوټر ساینس په برخه کې د لیسانس سند"
+                    >
+                        Bachelor of Science in Computer Science
+                    </h3>
+
+                    <p
+                        data-en="Shaikh Zayed University · 2017 – 2021"
+                        data-ps="شیخ زاید پوهنتون · ۲۰۱۷ – ۲۰۲۱"
+                    >
+                        Shaikh Zayed University · 2017 – 2021
+                    </p>
+
+                    <span class="education-tag">
+
+                        <i class="fa-solid fa-code"></i>
+
+                        <span
+                            data-en="Computer Science"
+                            data-ps="کمپیوټر ساینس"
+                        >
+                            Computer Science
+                        </span>
+
+                    </span>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     CERTIFICATES
+===================================================== -->
+
+<section id="certificates" class="reveal">
+
+    <div class="container">
+
+        <div class="section-header">
+
+            <span
+                data-en="Certificates & Courses"
+                data-ps="سندونه او کورسونه"
+            >
+                Certificates & Courses
+            </span>
+
+            <h2
+                data-en="Professional Education"
+                data-ps="مسلکي زده کړې"
+            >
+                Professional Education
+            </h2>
+
+            <p
+                data-en="Professional courses, training and certificates completed during my career."
+                data-ps="هغه مسلکي کورسونه، روزنې او سندونه چې ما د خپلې کاري دورې په جریان کې بشپړ کړي دي."
+            >
+                Professional courses, training and certificates completed during my career.
+            </p>
+
+        </div>
+
+
+        <div class="certificate-wrapper">
+
+            <table class="certificate-table">
+
+                <thead>
+
+                    <tr>
+
+                        <th
+                            data-en="CERTIFICATES / DEGREES"
+                            data-ps="سندونه / زده کړې"
+                        >
+                            CERTIFICATES / DEGREES
+                        </th>
+
+                        <th
+                            data-en="PLACE"
+                            data-ps="ځای"
+                        >
+                            PLACE
+                        </th>
+
+                        <th
+                            data-en="Start Year"
+                            data-ps="د پیل نېټه"
+                        >
+                            Start Year
+                        </th>
+
+                        <th
+                            data-en="G-Year"
+                            data-ps="د فراغت / پای نېټه"
+                        >
+                            G-Year
+                        </th>
+
+                    </tr>
+
+                </thead>
+
+
+                <tbody>
+
+
+                    <tr>
+
+                        <td>
+                            Professional English Language Course (PELC)
+                        </td>
+
+                        <td>
+                            Kabul English Language Center
+                            <strong>(Kabul province)</strong>
+                        </td>
+
+                        <td>
+                            2018/12/1
+                        </td>
+
+                        <td>
+                            19/2/25
+                        </td>
+
+                    </tr>
+
+
+                    <tr>
+
+                        <td>
+                            Special Conversation Course
+                        </td>
+
+                        <td>
+                            Kabul English Language Center
+                            <strong>(Kabul province)</strong>
+                        </td>
+
+                        <td>
+                            2018/12/25
+                        </td>
+
+                        <td>
+                            2019/2/25
+                        </td>
+
+                    </tr>
+
+
+                    <tr>
+
+                        <td>
+                            Special Conversation Class
+                        </td>
+
+                        <td>
+                            TOLO-E-AFGHAN Academic Center
+                            <strong>(Nengarhar province)</strong>
+                        </td>
+
+                        <td>
+                            2020/12/1
+                        </td>
+
+                        <td>
+                            2021/2/30
+                        </td>
+
+                    </tr>
+
+
+                    <tr>
+
+                        <td>
+                            Web Designing
+                        </td>
+
+                        <td>
+                            PIXEL HUB IT Solution Company
+                            <strong>(Nengarhar province)</strong>
+                        </td>
+
+                        <td>
+                            2019/12/23
+                        </td>
+
+                        <td>
+                            2020/2/25
+                        </td>
+
+                    </tr>
+
+
+                    <tr>
+
+                        <td>
+                            Web Development and Database
+                        </td>
+
+                        <td>
+                            PIXEL HUB IT Solution Company
+                            <strong>(Nengarhar province)</strong>
+                        </td>
+
+                        <td>
+                            2020/DEC/15
+                        </td>
+
+                        <td>
+                            2021/Jan/21
+                        </td>
+
+                    </tr>
+
+
+                    <tr>
+
+                        <td>
+                            Upper Intermediate in English
+                        </td>
+
+                        <td>
+                            Zaland English Learning Center
+                            <strong>(Paktika / Sharana)</strong>
+                        </td>
+
+                        <td>
+                            2012/3/10
+                        </td>
+
+                        <td>
+                            2013/3/10
+                        </td>
+
+                    </tr>
+
+
+                    <tr>
+
+                        <td>
+                            Networking (CCNA)
+                        </td>
+
+                        <td>
+                            Zoom byte Cisco Training
+                            <strong>(Kabul)</strong>
+                        </td>
+
+                        <td>
+                            2018.12.1
+                        </td>
+
+                        <td>
+                            2019.2.25
+                        </td>
+
+                    </tr>
+
+
+                    <tr>
+
+                        <td>
+                            Online Web Project
+                        </td>
+
+                        <td>
+                            Yahoo Baba Website
+                        </td>
+
+                        <td>
+                            2021
+                        </td>
+
+                        <td>
+                            2021/8/18
+                        </td>
+
+                    </tr>
+
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     TRAINING & PROFESSIONAL DEVELOPMENT
+===================================================== -->
+
+<section id="training" class="reveal">
+
+    <div class="container">
+
+        <div class="section-header">
+
+            <span
+                data-en="Training & Professional Development"
+                data-ps="روزنې او مسلکي پرمختګ"
+            >
+                Training & Professional Development
+            </span>
+
+            <h2
+                data-en="Professional Trainings"
+                data-ps="مسلکي روزنې"
+            >
+                Professional Trainings
+            </h2>
+
+            <p
+                data-en="During my professional career, I received various technical, humanitarian, field, data-management and project-related trainings from different organizations."
+                data-ps="ما د خپلې کاري دورې په جریان کې له بېلابېلو ادارو څخه د معلوماتو مدیریت، ډیټا، بشري مرستو، ساحوي کارونو، پروژو او تخنیکي برخو اړوند بېلابېلې روزنې ترلاسه کړې دي."
+            >
+                During my professional career, I received various technical,
+                humanitarian, field, data-management and project-related trainings
+                from different organizations.
+            </p>
+
+        </div>
+
+
+        <div class="training-grid">
+
+
+            <!-- TOT -->
+
+            <div class="card training-card">
+
+                <div class="training-icon">
+                    <i class="fa-solid fa-people-group"></i>
+                </div>
+
+                <h3
+                    data-en="Training of Trainers (TOT) on Humanitarian Aid"
+                    data-ps="د بشري مرستو په برخه کې د روزونکو روزنه (TOT)"
+                >
+                    Training of Trainers (TOT) on Humanitarian Aid
                 </h3>
 
-
-                <p>
-
-                    Shaikh Zayed University · 2017 – 2021
-
+                <p
+                    data-en="Five-day Training of Trainers focused on humanitarian assistance and effective field-level support."
+                    data-ps="د بشري مرستو او ساحوي ملاتړ په برخه کې پنځه ورځنۍ د روزونکو روزنه."
+                >
+                    Five-day Training of Trainers focused on humanitarian
+                    assistance and effective field-level support.
                 </p>
 
+                <div class="training-provider">
+
+                    <i class="fa-solid fa-building"></i>
+
+                    WFP / KAO · 5 Days
+
+                </div>
+
             </div>
+
+
+            <!-- TEAM MANAGEMENT -->
+
+            <div class="card training-card">
+
+                <div class="training-icon">
+                    <i class="fa-solid fa-users-gear"></i>
+                </div>
+
+                <h3
+                    data-en="Team Management Training"
+                    data-ps="د ټیم مدیریت روزنه"
+                >
+                    Team Management Training
+                </h3>
+
+                <p
+                    data-en="Practical training focused on team coordination, supervision, communication and effective management."
+                    data-ps="د ټیم د همغږۍ، څارنې، اړیکو او اغېزمن مدیریت په برخه کې عملي روزنه."
+                >
+                    Practical training focused on team coordination,
+                    supervision, communication and effective management.
+                </p>
+
+                <div class="training-provider">
+
+                    <i class="fa-solid fa-building"></i>
+
+                    HAALO · 2 Days
+
+                </div>
+
+            </div>
+
+
+            <!-- DIGITALIZATION -->
+
+            <div class="card training-card">
+
+                <div class="training-icon">
+                    <i class="fa-solid fa-laptop-code"></i>
+                </div>
+
+                <h3
+                    data-en="Data Digitalization / SCOPE Registration"
+                    data-ps="د معلوماتو ډیجیټل کول / SCOPE ثبت"
+                >
+                    Data Digitalization / SCOPE Registration
+                </h3>
+
+                <p
+                    data-en="Training related to digital registration, data systems, SCOPE processes and digital information management."
+                    data-ps="د ډیجیټل ثبت، د معلوماتو سیستمونو، SCOPE پروسو او ډیجیټلي معلوماتو مدیریت اړوند روزنه."
+                >
+                    Training related to digital registration,
+                    data systems, SCOPE processes and digital information management.
+                </p>
+
+                <div class="training-provider">
+
+                    <i class="fa-solid fa-building"></i>
+
+                    HAALO · 2 Days
+
+                </div>
+
+            </div>
+
+
+            <!-- DATA COLLECTION -->
+
+            <div class="card training-card">
+
+                <div class="training-icon">
+                    <i class="fa-solid fa-database"></i>
+                </div>
+
+                <h3
+                    data-en="Data Collection & Survey Training"
+                    data-ps="د معلوماتو راټولولو او سروې روزنه"
+                >
+                    Data Collection & Survey Training
+                </h3>
+
+                <p
+                    data-en="Training in field data collection, surveys, data quality and structured information gathering."
+                    data-ps="د ساحوي معلوماتو راټولولو، سروې، د معلوماتو کیفیت او منظم معلوماتو راټولولو روزنه."
+                >
+                    Training in field data collection, surveys,
+                    data quality and structured information gathering.
+                </p>
+
+                <div class="training-provider">
+
+                    <i class="fa-solid fa-building"></i>
+
+                    RHDO · 2 Days
+
+                </div>
+
+            </div>
+
+
+            <!-- DATA ANALYSIS -->
+
+            <div class="card training-card">
+
+                <div class="training-icon">
+                    <i class="fa-solid fa-chart-line"></i>
+                </div>
+
+                <h3
+                    data-en="Data Analysis Training"
+                    data-ps="د معلوماتو د تحلیل روزنه"
+                >
+                    Data Analysis Training
+                </h3>
+
+                <p
+                    data-en="Professional development related to data analysis, interpretation, reporting and decision-support information."
+                    data-ps="د معلوماتو تحلیل، تفسیر، راپور جوړونې او د پرېکړو لپاره د معلوماتو کارونې اړوند روزنه."
+                >
+                    Professional development related to data analysis,
+                    interpretation, reporting and decision-support information.
+                </p>
+
+                <div class="training-provider">
+
+                    <i class="fa-solid fa-chart-column"></i>
+
+                    Data Management
+
+                </div>
+
+            </div>
+
+
+            <!-- DATA CLEANING -->
+
+            <div class="card training-card">
+
+                <div class="training-icon">
+                    <i class="fa-solid fa-filter-circle-dollar"></i>
+                </div>
+
+                <h3
+                    data-en="Data Cleaning & Quality"
+                    data-ps="د معلوماتو پاکول او کیفیت"
+                >
+                    Data Cleaning & Quality
+                </h3>
+
+                <p
+                    data-en="Training and practical experience in data cleaning, validation, quality checking and preparation for reporting."
+                    data-ps="د معلوماتو پاکولو، اعتبار سنجۍ، د کیفیت کتنې او د راپور لپاره د معلوماتو چمتو کولو اړوند روزنه او تجربه."
+                >
+                    Training and practical experience in data cleaning,
+                    validation, quality checking and preparation for reporting.
+                </p>
+
+                <div class="training-provider">
+
+                    <i class="fa-solid fa-check-double"></i>
+
+                    Data Quality
+
+                </div>
+
+            </div>
+
+
+            <!-- DATA ENTRY -->
+
+            <div class="card training-card">
+
+                <div class="training-icon">
+                    <i class="fa-solid fa-keyboard"></i>
+                </div>
+
+                <h3
+                    data-en="Data Entry & Digital Registration"
+                    data-ps="د معلوماتو داخلول او ډیجیټل ثبت"
+                >
+                    Data Entry & Digital Registration
+                </h3>
+
+                <p
+                    data-en="Training related to accurate data entry, registration procedures and digital record management."
+                    data-ps="د معلوماتو دقیق داخلولو، ثبت پروسیجرونو او ډیجیټلي ریکارډونو مدیریت اړوند روزنه."
+                >
+                    Training related to accurate data entry,
+                    registration procedures and digital record management.
+                </p>
+
+                <div class="training-provider">
+
+                    <i class="fa-solid fa-table"></i>
+
+                    Data Management
+
+                </div>
+
+            </div>
+
+
+            <!-- FOOD DISTRIBUTION -->
+
+            <div class="card training-card">
+
+                <div class="training-icon">
+                    <i class="fa-solid fa-box-open"></i>
+                </div>
+
+                <h3
+                    data-en="Food Distribution & Field Activities"
+                    data-ps="د خوړو وېش او ساحوي فعالیتونه"
+                >
+                    Food Distribution & Field Activities
+                </h3>
+
+                <p
+                    data-en="Practical exposure and training related to food distribution processes and field activities."
+                    data-ps="د خوړو د وېش پروسو او ساحوي فعالیتونو اړوند عملي روزنه او تجربه."
+                >
+                    Practical exposure and training related to food
+                    distribution processes and field activities.
+                </p>
+
+                <div class="training-provider">
+
+                    <i class="fa-solid fa-building"></i>
+
+                    RHDO & HAALO
+
+                </div>
+
+            </div>
+
+
+            <!-- SBC -->
+
+            <div class="card training-card">
+
+                <div class="training-icon">
+                    <i class="fa-solid fa-comments"></i>
+                </div>
+
+                <h3
+                    data-en="Social Behavior Change Training"
+                    data-ps="د ټولنیز چلند د بدلون روزنه"
+                >
+                    Social Behavior Change Training
+                </h3>
+
+                <p
+                    data-en="Training related to social behavior change communication and community-level engagement."
+                    data-ps="د ټولنیز چلند د بدلون، اړیکو او له ټولنې سره د تعامل اړوند روزنه."
+                >
+                    Training related to social behavior change communication
+                    and community-level engagement.
+                </p>
+
+                <div class="training-provider">
+
+                    <i class="fa-solid fa-building"></i>
+
+                    HAALO
+
+                </div>
+
+            </div>
+
+
+            <!-- EMERGENCY -->
+
+            <div class="card training-card">
+
+                <div class="training-icon">
+                    <i class="fa-solid fa-truck-medical"></i>
+                </div>
+
+                <h3
+                    data-en="Emergency Project Training"
+                    data-ps="د بېړنیو پروژو اړوند روزنې"
+                >
+                    Emergency Project Training
+                </h3>
+
+                <p
+                    data-en="Training and professional exposure related to emergency projects, field implementation and humanitarian response."
+                    data-ps="د بېړنیو پروژو، ساحوي تطبیق او بشري مرستو د غبرګون اړوند روزنه او مسلکي تجربه."
+                >
+                    Training and professional exposure related to emergency
+                    projects, field implementation and humanitarian response.
+                </p>
+
+                <div class="training-provider">
+
+                    <i class="fa-solid fa-hand-holding-heart"></i>
+
+                    Humanitarian Projects
+
+                </div>
+
+            </div>
+
+
+            <!-- FIELD WORK -->
+
+            <div class="card training-card">
+
+                <div class="training-icon">
+                    <i class="fa-solid fa-map-location-dot"></i>
+                </div>
+
+                <h3
+                    data-en="Field Operations & Work-Site Training"
+                    data-ps="د کاري ساحو او ساحوي فعالیتونو روزنې"
+                >
+                    Field Operations & Work-Site Training
+                </h3>
+
+                <p
+                    data-en="Professional trainings related to field operations, work-site procedures, coordination and implementation."
+                    data-ps="د ساحوي عملیاتو، کاري ساحو، همغږۍ او د پروژو د تطبیق اړوند مسلکي روزنې."
+                >
+                    Professional trainings related to field operations,
+                    work-site procedures, coordination and implementation.
+                </p>
+
+                <div class="training-provider">
+
+                    <i class="fa-solid fa-location-dot"></i>
+
+                    Various Organizations
+
+                </div>
+
+            </div>
+
+
+            <!-- HUMANITARIAN -->
+
+            <div class="card training-card">
+
+                <div class="training-icon">
+                    <i class="fa-solid fa-hand-holding-heart"></i>
+                </div>
+
+                <h3
+                    data-en="Humanitarian Assistance Training"
+                    data-ps="د بشري مرستو اړوند روزنې"
+                >
+                    Humanitarian Assistance Training
+                </h3>
+
+                <p
+                    data-en="Various humanitarian-aid related trainings received during professional work with different organizations."
+                    data-ps="له بېلابېلو ادارو سره د کار پر مهال د بشري مرستو په برخه کې ترلاسه شوې بېلابېلې روزنې."
+                >
+                    Various humanitarian-aid related trainings received
+                    during professional work with different organizations.
+                </p>
+
+                <div class="training-provider">
+
+                    <i class="fa-solid fa-building"></i>
+
+                    HAALO · RHDO · WFP
+
+                </div>
+
+            </div>
+
+
+            <!-- ENGLISH -->
+
+            <div class="card training-card">
+
+                <div class="training-icon">
+                    <i class="fa-solid fa-language"></i>
+                </div>
+
+                <h3
+                    data-en="English Grammar & Special English Speaking"
+                    data-ps="د انګلیسي ګرامر او ځانګړي انګلیسي خبرو اترو کورس"
+                >
+                    English Grammar & Special English Speaking
+                </h3>
+
+                <p
+                    data-en="English language development through grammar, conversation and speaking courses."
+                    data-ps="د ګرامر، خبرو اترو او ویلو کورسونو له لارې د انګلیسي ژبې زده کړه."
+                >
+                    English language development through grammar,
+                    conversation and speaking courses.
+                </p>
+
+                <div class="training-provider">
+
+                    <i class="fa-solid fa-book-open"></i>
+
+                    English Language Training
+
+                </div>
+
+            </div>
+
+
+            <!-- CCNA -->
+
+            <div class="card training-card">
+
+                <div class="training-icon">
+                    <i class="fa-solid fa-network-wired"></i>
+                </div>
+
+                <h3
+                    data-en="CCNA Networking"
+                    data-ps="د CCNA شبکو کورس"
+                >
+                    CCNA Networking
+                </h3>
+
+                <p
+                    data-en="Networking fundamentals and Cisco-oriented networking training."
+                    data-ps="د شبکو بنسټیز مفاهیم او د Cisco شبکو اړوند روزنه."
+                >
+                    Networking fundamentals and Cisco-oriented networking training.
+                </p>
+
+                <div class="training-provider">
+
+                    <i class="fa-solid fa-network-wired"></i>
+
+                    Cisco Training
+
+                </div>
+
+            </div>
+
+
+            <!-- WEB DEVELOPMENT -->
+
+            <div class="card training-card">
+
+                <div class="training-icon">
+                    <i class="fa-solid fa-code"></i>
+                </div>
+
+                <h3
+                    data-en="Web Development"
+                    data-ps="د ویب جوړونې روزنه"
+                >
+                    Web Development
+                </h3>
+
+                <p
+                    data-en="Web designing and development training covering practical website development."
+                    data-ps="د ویب ډیزاین او ویب جوړونې په برخه کې عملي روزنه."
+                >
+                    Web designing and development training covering
+                    practical website development.
+                </p>
+
+                <div class="training-provider">
+
+                    <i class="fa-solid fa-globe"></i>
+
+                    Web Development
+
+                </div>
+
+            </div>
+
+
+            <!-- DATABASE -->
+
+            <div class="card training-card">
+
+                <div class="training-icon">
+                    <i class="fa-solid fa-database"></i>
+                </div>
+
+                <h3
+                    data-en="Database Development"
+                    data-ps="د ډیټابېس جوړونې روزنه"
+                >
+                    Database Development
+                </h3>
+
+                <p
+                    data-en="Practical training in database development, data organization and database-based systems."
+                    data-ps="د ډیټابېس جوړونې، معلوماتو تنظیم او د ډیټابېس پر بنسټ سیستمونو عملي روزنه."
+                >
+                    Practical training in database development,
+                    data organization and database-based systems.
+                </p>
+
+                <div class="training-provider">
+
+                    <i class="fa-solid fa-server"></i>
+
+                    Database Development
+
+                </div>
+
+            </div>
+
+
+            <!-- WFP KABUL -->
+
+            <div class="card training-card">
+
+                <div class="training-icon">
+                    <i class="fa-solid fa-building-columns"></i>
+                </div>
+
+                <h3
+                    data-en="Professional Development with WFP"
+                    data-ps="له WFP سره مسلکي روزنې"
+                >
+                    Professional Development with WFP
+                </h3>
+
+                <p
+                    data-en="Participated in professional trainings and capacity-building activities through WFP central office / Kabul area office."
+                    data-ps="د WFP مرکزي دفتر / کابل اریا آفیس له لارې مې په بېلابېلو مسلکي روزنو او ظرفیت لوړونې فعالیتونو کې ګډون کړی."
+                >
+                    Participated in professional trainings and capacity-building
+                    activities through WFP central office / Kabul area office.
+                </p>
+
+                <div class="training-provider">
+
+                    <i class="fa-solid fa-building"></i>
+
+                    WFP · Kabul
+
+                </div>
+
+            </div>
+
 
         </div>
 
@@ -2241,15 +3954,33 @@
      EXPERIENCE
 ===================================================== -->
 
-<section id="experience">
+<section id="experience" class="reveal">
 
     <div class="container">
 
         <div class="section-header">
 
-            <span>Experience</span>
+            <span
+                data-en="Experience"
+                data-ps="کاري تجربه"
+            >
+                Experience
+            </span>
 
-            <h2>Professional Experience</h2>
+            <h2
+                data-en="Professional Experience"
+                data-ps="مسلکي کاري تجربه"
+            >
+                Professional Experience
+            </h2>
+
+            <p
+                data-en="Professional experience across IT, software, data management, humanitarian projects, journalism and education."
+                data-ps="په معلوماتي ټکنالوژۍ، سافټویر، معلوماتو مدیریت، بشري پروژو، ژورنالیزم او ښوونه کې مسلکي کاري تجربه."
+            >
+                Professional experience across IT, software, data management,
+                humanitarian projects, journalism and education.
+            </p>
 
         </div>
 
@@ -2257,31 +3988,39 @@
         <div class="experience-grid">
 
 
-            <!-- EXPERIENCE 1 -->
+            <!-- HAALO -->
 
             <div class="card experience-card">
 
                 <div class="experience-top">
 
                     <div class="experience-icon">
-
                         <i class="fa-solid fa-briefcase"></i>
-
                     </div>
-
 
                     <div>
 
-                        <h3>
-
-                            Assistant Project Manager
-
+                        <h3
+                            data-en="ICT-Scope Officer"
+                            data-ps="د ICT-Scope مسئول"
+                        >
+                            ICT-Scope Officer
                         </h3>
 
-
                         <div class="company">
-
                             HAALO
+                        </div>
+
+                        <div class="experience-location">
+
+                            <i class="fa-solid fa-location-dot"></i>
+
+                            <span
+                                data-en="Afghanistan"
+                                data-ps="افغانستان"
+                            >
+                                Afghanistan
+                            </span>
 
                         </div>
 
@@ -2289,42 +4028,150 @@
 
                 </div>
 
+                <p
+                    data-en="Currently working with HAALO as an ICT-Scope Officer."
+                    data-ps="اوس مهال له HAALO ادارې سره د ICT-Scope Officer په حیث کار کوم."
+                >
+                    Currently working with HAALO as an ICT-Scope Officer.
+                </p>
 
-                <p>
+            </div>
 
+
+            <!-- BADLON SRAK -->
+
+            <div class="card experience-card">
+
+                <div class="experience-top">
+
+                    <div class="experience-icon">
+                        <i class="fa-solid fa-microphone"></i>
+                    </div>
+
+                    <div>
+
+                        <h3
+                            data-en="Journalist"
+                            data-ps="خبریال"
+                        >
+                            Journalist
+                        </h3>
+
+                        <div class="company">
+                            Badlon Srak Radio
+                        </div>
+
+                        <div class="experience-location">
+
+                            <i class="fa-solid fa-location-dot"></i>
+
+                            <span
+                                data-en="Paktika"
+                                data-ps="پکتیکا"
+                            >
+                                Paktika
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <p
+                    data-en="Currently working as a journalist on Thursday, Friday and Saturday."
+                    data-ps="اوس مهال له Badlon Srak Radio سره د خبریال په حیث د پنجشنبې، جمعې او شنبې په ورځو کې کار کوم."
+                >
+                    Currently working as a journalist on Thursday,
+                    Friday and Saturday.
+                </p>
+
+            </div>
+
+
+            <!-- ASSISTANT PROJECT MANAGER -->
+
+            <div class="card experience-card">
+
+                <div class="experience-top">
+
+                    <div class="experience-icon">
+                        <i class="fa-solid fa-user-tie"></i>
+                    </div>
+
+                    <div>
+
+                        <h3
+                            data-en="Assistant Project Manager"
+                            data-ps="د پروژې مرستیال مدیر"
+                        >
+                            Assistant Project Manager
+                        </h3>
+
+                        <div class="company">
+                            HAALO
+                        </div>
+
+                        <div class="experience-location">
+
+                            <i class="fa-solid fa-location-dot"></i>
+
+                            <span
+                                data-en="Ghazni"
+                                data-ps="غزني"
+                            >
+                                Ghazni
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <p
+                    data-en="WFP-related GFA & MCBP projects · Ghazni"
+                    data-ps="د WFP اړوند GFA او MCBP پروژې · غزني"
+                >
                     WFP-related GFA & MCBP projects · Ghazni
-
                 </p>
 
             </div>
 
 
-
-            <!-- EXPERIENCE 2 -->
+            <!-- RHDO -->
 
             <div class="card experience-card">
 
                 <div class="experience-top">
 
                     <div class="experience-icon">
-
                         <i class="fa-solid fa-database"></i>
-
                     </div>
-
 
                     <div>
 
-                        <h3>
-
+                        <h3
+                            data-en="Scope / Data Officer"
+                            data-ps="د SCOPE / معلوماتو مسئول"
+                        >
                             Scope / Data Officer
-
                         </h3>
 
-
                         <div class="company">
-
                             RHDO
+                        </div>
+
+                        <div class="experience-location">
+
+                            <i class="fa-solid fa-location-dot"></i>
+
+                            <span
+                                data-en="Paktika"
+                                data-ps="پکتیکا"
+                            >
+                                Paktika
+                            </span>
 
                         </div>
 
@@ -2332,42 +4179,49 @@
 
                 </div>
 
-
-                <p>
-
+                <p
+                    data-en="WFP-related GFA project · Paktika"
+                    data-ps="د WFP اړوند GFA پروژه · پکتیکا"
+                >
                     WFP-related GFA project · Paktika
-
                 </p>
 
             </div>
 
 
-
-            <!-- EXPERIENCE 3 -->
+            <!-- PIXEL -->
 
             <div class="card experience-card">
 
                 <div class="experience-top">
 
                     <div class="experience-icon">
-
                         <i class="fa-solid fa-code"></i>
-
                     </div>
-
 
                     <div>
 
-                        <h3>
-
+                        <h3
+                            data-en="Web & Database Developer"
+                            data-ps="د ویب او ډیټابېس جوړونکی"
+                        >
                             Web & Database Developer
-
                         </h3>
 
-
                         <div class="company">
-
                             PIXEL Hub IT Solutions
+                        </div>
+
+                        <div class="experience-location">
+
+                            <i class="fa-solid fa-location-dot"></i>
+
+                            <span
+                                data-en="Nangarhar"
+                                data-ps="ننګرهار"
+                            >
+                                Nangarhar
+                            </span>
 
                         </div>
 
@@ -2375,42 +4229,49 @@
 
                 </div>
 
-
-                <p>
-
+                <p
+                    data-en="Web development and database systems · Nangarhar"
+                    data-ps="د ویب جوړونې او ډیټابېس سیستمونه · ننګرهار"
+                >
                     Web development and database systems · Nangarhar
-
                 </p>
 
             </div>
 
 
-
-            <!-- EXPERIENCE 4 -->
+            <!-- INSTRUCTOR -->
 
             <div class="card experience-card">
 
                 <div class="experience-top">
 
                     <div class="experience-icon">
-
                         <i class="fa-solid fa-chalkboard-user"></i>
-
                     </div>
-
 
                     <div>
 
-                        <h3>
-
+                        <h3
+                            data-en="Computer Instructor"
+                            data-ps="د کمپیوټر ښوونکی"
+                        >
                             Computer Instructor
-
                         </h3>
 
-
                         <div class="company">
-
                             Computer Education & Training
+                        </div>
+
+                        <div class="experience-location">
+
+                            <i class="fa-solid fa-location-dot"></i>
+
+                            <span
+                                data-en="Afghanistan"
+                                data-ps="افغانستان"
+                            >
+                                Afghanistan
+                            </span>
 
                         </div>
 
@@ -2418,12 +4279,616 @@
 
                 </div>
 
-
-                <p>
-
+                <p
+                    data-en="Computer education and online teaching experience."
+                    data-ps="د کمپیوټر د زده کړې او آنلاین تدریس تجربه."
+                >
                     Computer education and online teaching experience.
-
                 </p>
+
+            </div>
+
+
+            <!-- ALFALAH -->
+
+            <div class="card experience-card">
+
+                <div class="experience-top">
+
+                    <div class="experience-icon">
+                        <i class="fa-solid fa-language"></i>
+                    </div>
+
+                    <div>
+
+                        <h3
+                            data-en="English & Computer Instructor"
+                            data-ps="د انګلیسي او کمپیوټر ښوونکی"
+                        >
+                            English & Computer Instructor
+                        </h3>
+
+                        <div class="company">
+                            Alfalah Learning Center
+                        </div>
+
+                        <div class="experience-location">
+
+                            <i class="fa-solid fa-location-dot"></i>
+
+                            <span
+                                data-en="Sharana, Paktika"
+                                data-ps="ښرنه، پکتیکا"
+                            >
+                                Sharana, Paktika
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <p
+                    data-en="Teaching English language and computer-related subjects in Sharana, Paktika."
+                    data-ps="په ښرنه، پکتیکا کې د انګلیسي ژبې او کمپیوټر اړوند مضامینو تدریس."
+                >
+                    Teaching English language and computer-related subjects
+                    in Sharana, Paktika.
+                </p>
+
+            </div>
+
+
+            <!-- ALQALAM -->
+
+            <div class="card experience-card">
+
+                <div class="experience-top">
+
+                    <div class="experience-icon">
+                        <i class="fa-solid fa-book"></i>
+                    </div>
+
+                    <div>
+
+                        <h3
+                            data-en="English & Computer Instructor"
+                            data-ps="د انګلیسي او کمپیوټر ښوونکی"
+                        >
+                            English & Computer Instructor
+                        </h3>
+
+                        <div class="company">
+                            Alqalam Learning Center
+                        </div>
+
+                        <div class="experience-location">
+
+                            <i class="fa-solid fa-location-dot"></i>
+
+                            <span
+                                data-en="Sharana, Paktika"
+                                data-ps="ښرنه، پکتیکا"
+                            >
+                                Sharana, Paktika
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <p
+                    data-en="Teaching English and computer-related subjects in Sharana, Paktika."
+                    data-ps="په ښرنه، پکتیکا کې د انګلیسي او کمپیوټر اړوند مضامینو تدریس."
+                >
+                    Teaching English and computer-related subjects
+                    in Sharana, Paktika.
+                </p>
+
+            </div>
+
+
+            <!-- ROSHAAN NIHAD -->
+
+            <div class="card experience-card">
+
+                <div class="experience-top">
+
+                    <div class="experience-icon">
+                        <i class="fa-solid fa-school"></i>
+                    </div>
+
+                    <div>
+
+                        <h3
+                            data-en="English & Computer Instructor"
+                            data-ps="د انګلیسي او کمپیوټر ښوونکی"
+                        >
+                            English & Computer Instructor
+                        </h3>
+
+                        <div class="company">
+                            Roshaan Nihad Educational And Training Center
+                        </div>
+
+                        <div class="experience-location">
+
+                            <i class="fa-solid fa-location-dot"></i>
+
+                            <span
+                                data-en="Sharana, Paktika"
+                                data-ps="ښرنه، پکتیکا"
+                            >
+                                Sharana, Paktika
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <p
+                    data-en="English language and computer training in Sharana, Paktika."
+                    data-ps="په ښرنه، پکتیکا کې د انګلیسي ژبې او کمپیوټر روزنه."
+                >
+                    English language and computer training
+                    in Sharana, Paktika.
+                </p>
+
+            </div>
+
+
+            <!-- GOOGLE INSTITUTE -->
+
+            <div class="card experience-card">
+
+                <div class="experience-top">
+
+                    <div class="experience-icon">
+                        <i class="fa-brands fa-google"></i>
+                    </div>
+
+                    <div>
+
+                        <h3
+                            data-en="English & Computer Instructor"
+                            data-ps="د انګلیسي او کمپیوټر ښوونکی"
+                        >
+                            English & Computer Instructor
+                        </h3>
+
+                        <div class="company">
+                            Google Institute
+                        </div>
+
+                        <div class="experience-location">
+
+                            <i class="fa-solid fa-location-dot"></i>
+
+                            <span
+                                data-en="Khost Province"
+                                data-ps="خوست ولایت"
+                            >
+                                Khost Province
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <p
+                    data-en="Teaching English and computer-related subjects in Khost Province."
+                    data-ps="په خوست ولایت کې د انګلیسي او کمپیوټر اړوند مضامینو تدریس."
+                >
+                    Teaching English and computer-related subjects
+                    in Khost Province.
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     ACHIEVEMENTS
+===================================================== -->
+
+<section id="achievements" class="reveal">
+
+    <div class="container">
+
+        <div class="section-header">
+
+            <span
+                data-en="Achievements"
+                data-ps="لاسته راوړنې"
+            >
+                Achievements
+            </span>
+
+            <h2
+                data-en="Professional & Academic Achievements"
+                data-ps="مسلکي او علمي لاسته راوړنې"
+            >
+                Professional & Academic Achievements
+            </h2>
+
+            <p
+                data-en="Selected academic, professional, technical and humanitarian achievements from my journey."
+                data-ps="زما د علمي، مسلکي، تخنیکي او بشري خدمتونو له سفر څخه ځینې مهمې لاسته راوړنې."
+            >
+                Selected academic, professional, technical and humanitarian achievements
+                from my journey.
+            </p>
+
+        </div>
+
+
+        <!-- STATISTICS -->
+
+        <div class="achievement-stats">
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon">
+
+                    <i class="fa-solid fa-ranking-star"></i>
+
+                </div>
+
+                <div
+                    class="stat-number counter"
+                    data-target="1"
+                >
+                    0
+                </div>
+
+                <div
+                    class="stat-label"
+                    data-en="Overall School Rank"
+                    data-ps="په ښوونځي کې عمومي رتبه"
+                >
+                    Overall School Rank
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon">
+
+                    <i class="fa-solid fa-graduation-cap"></i>
+
+                </div>
+
+                <div
+                    class="stat-number counter"
+                    data-target="2016"
+                >
+                    0
+                </div>
+
+                <div
+                    class="stat-label"
+                    data-en="High School Graduation"
+                    data-ps="د ښوونځي د فراغت کال"
+                >
+                    High School Graduation
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon">
+
+                    <i class="fa-solid fa-code"></i>
+
+                </div>
+
+                <div
+                    class="stat-number counter"
+                    data-target="6"
+                >
+                    0
+                </div>
+
+                <div
+                    class="stat-label"
+                    data-en="Major Developed Systems"
+                    data-ps="مهم جوړ شوي سیستمونه"
+                >
+                    Major Developed Systems
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon">
+
+                    <i class="fa-solid fa-trophy"></i>
+
+                </div>
+
+                <div
+                    class="stat-number counter"
+                    data-target="3"
+                >
+                    0
+                </div>
+
+                <div
+                    class="stat-label"
+                    data-en="Second-Rank Occasions"
+                    data-ps="دوهم نمره کېدو شمېر"
+                >
+                    Second-Rank Occasions
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+        <!-- ACHIEVEMENT CARDS -->
+
+        <div class="achievements-grid">
+
+
+            <!-- SCHOOL -->
+
+            <div class="card achievement-card">
+
+                <div class="achievement-icon">
+
+                    <i class="fa-solid fa-medal"></i>
+
+                </div>
+
+                <div>
+
+                    <h3
+                        data-en="Overall First-Rank School Graduate"
+                        data-ps="په ښوونځي کې عمومي اول نمره فارغ"
+                    >
+                        Overall First-Rank School Graduate
+                    </h3>
+
+                    <p
+                        data-en="Graduated from Mohammad Khil High School in 2016 as the overall first-rank student. From the beginning to the end of my school education, I maintained first rank except for three occasions when I achieved second rank."
+                        data-ps="په ۲۰۱۶ کال کې مې له محمد خېلو عالي لیسې څخه د ښوونځي د عمومي اول نمره زده کوونکي په توګه فراغت ترلاسه کړ. د ښوونځي له پیل څخه تر پایه مې عموماً لومړی مقام درلود او یوازې درې ځله دوهم نمره شوی یم."
+                    >
+                        Graduated from Mohammad Khil High School in 2016
+                        as the overall first-rank student.
+                    </p>
+
+                    <span
+                        class="achievement-tag"
+                        data-en="Academic Excellence"
+                        data-ps="علمي بریا"
+                    >
+                        Academic Excellence
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <!-- WFP GFA -->
+
+            <div class="card achievement-card">
+
+                <div class="achievement-icon">
+
+                    <i class="fa-solid fa-hand-holding-heart"></i>
+
+                </div>
+
+                <div>
+
+                    <h3
+                        data-en="WFP GFA — Paktika"
+                        data-ps="WFP GFA — پکتیکا"
+                    >
+                        WFP GFA — Paktika
+                    </h3>
+
+                    <p
+                        data-en="Successfully contributed to implementation of the WFP General Food Assistance (GFA) Project in Paktika Province."
+                        data-ps="په پکتیکا ولایت کې مې د WFP د عمومي خوړو مرستې (GFA) پروژې د تطبیق په برخه کې په بریالیتوب سره ونډه اخیستې ده."
+                    >
+                        Successfully contributed to implementation of the
+                        WFP General Food Assistance (GFA) Project in Paktika Province.
+                    </p>
+
+                    <span
+                        class="achievement-tag"
+                        data-en="Humanitarian Assistance"
+                        data-ps="بشري مرستې"
+                    >
+                        Humanitarian Assistance
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <!-- GFA MCBP -->
+
+            <div class="card achievement-card">
+
+                <div class="achievement-icon">
+
+                    <i class="fa-solid fa-people-carry-box"></i>
+
+                </div>
+
+                <div>
+
+                    <h3
+                        data-en="GFA & MCBP — Ghazni"
+                        data-ps="GFA او MCBP — غزني"
+                    >
+                        GFA & MCBP — Ghazni
+                    </h3>
+
+                    <p
+                        data-en="Successfully supported implementation of GFA and MCBP Projects in Ghazni Province."
+                        data-ps="په غزني ولایت کې مې د GFA او MCBP پروژو د تطبیق په برخه کې په بریالیتوب سره ملاتړ کړی دی."
+                    >
+                        Successfully supported implementation of GFA
+                        and MCBP Projects in Ghazni Province.
+                    </p>
+
+                    <span
+                        class="achievement-tag"
+                        data-en="Project Support"
+                        data-ps="د پروژې ملاتړ"
+                    >
+                        Project Support
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <!-- TECHNOLOGY -->
+
+            <div class="card achievement-card">
+
+                <div class="achievement-icon">
+
+                    <i class="fa-solid fa-laptop-code"></i>
+
+                </div>
+
+                <div>
+
+                    <h3
+                        data-en="Technology & Software Development"
+                        data-ps="ټکنالوژي او سافټویر جوړونه"
+                    >
+                        Technology & Software Development
+                    </h3>
+
+                    <p
+                        data-en="Designed and developed multiple database systems and websites for organizations and private clients."
+                        data-ps="د ادارو او شخصي مراجعینو لپاره مې ګڼ ډیټابېس سیستمونه او ویبپاڼې ډیزاین او جوړې کړې دي."
+                    >
+                        Designed and developed multiple database systems
+                        and websites for organizations and private clients.
+                    </p>
+
+                    <span
+                        class="achievement-tag"
+                        data-en="Software & IT"
+                        data-ps="سافټویر او IT"
+                    >
+                        Software & IT
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <!-- RECOGNITION -->
+
+            <div class="card achievement-card">
+
+                <div class="achievement-icon">
+
+                    <i class="fa-solid fa-award"></i>
+
+                </div>
+
+                <div>
+
+                    <h3
+                        data-en="Certificate of Appreciation"
+                        data-ps="د قدردانۍ سند"
+                    >
+                        Certificate of Appreciation
+                    </h3>
+
+                    <p
+                        data-en="Received a Certificate of Appreciation from the people of Giro District, Ghazni, for outstanding performance."
+                        data-ps="د غزني ولایت د ګیرو ولسوالۍ د خلکو له خوا مې د غوره فعالیت له امله د قدردانۍ سند ترلاسه کړی دی."
+                    >
+                        Received a Certificate of Appreciation from
+                        the people of Giro District, Ghazni, for outstanding performance.
+                    </p>
+
+                    <span
+                        class="achievement-tag"
+                        data-en="Recognition"
+                        data-ps="قدرداني"
+                    >
+                        Recognition
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <!-- DATA MANAGEMENT -->
+
+            <div class="card achievement-card">
+
+                <div class="achievement-icon">
+
+                    <i class="fa-solid fa-chart-column"></i>
+
+                </div>
+
+                <div>
+
+                    <h3
+                        data-en="Data Management"
+                        data-ps="د معلوماتو مدیریت"
+                    >
+                        Data Management
+                    </h3>
+
+                    <p
+                        data-en="Contributed to improved reporting quality and project implementation through effective data management."
+                        data-ps="د اغېزمن معلوماتو مدیریت له لارې مې د راپور ورکولو کیفیت او د پروژو د تطبیق په ښه والي کې ونډه اخیستې ده."
+                    >
+                        Contributed to improved reporting quality
+                        and project implementation through effective data management.
+                    </p>
+
+                    <span
+                        class="achievement-tag"
+                        data-en="Data & Reporting"
+                        data-ps="معلومات او راپور ورکول"
+                    >
+                        Data & Reporting
+                    </span>
+
+                </div>
 
             </div>
 
@@ -2440,22 +4905,32 @@
      SKILLS
 ===================================================== -->
 
-<section id="skills">
+<section id="skills" class="reveal">
 
     <div class="container">
 
         <div class="section-header">
 
-            <span>Technical Skills</span>
+            <span
+                data-en="Technical Skills"
+                data-ps="تخنیکي مهارتونه"
+            >
+                Technical Skills
+            </span>
 
-            <h2>My Skills</h2>
+            <h2
+                data-en="My Skills"
+                data-ps="زما مهارتونه"
+            >
+                My Skills
+            </h2>
 
-
-            <p>
-
-                Technologies and professional skills that I use
-                for software, web, database and data-related work.
-
+            <p
+                data-en="Technologies and professional skills that I use for software, web, database and data-related work."
+                data-ps="هغه ټکنالوژۍ او مسلکي مهارتونه چې زه یې د سافټویر، ویب، ډیټابېس او معلوماتو اړوند کارونو لپاره کاروم."
+            >
+                Technologies and professional skills that I use for software,
+                web, database and data-related work.
             </p>
 
         </div>
@@ -2463,114 +4938,85 @@
 
         <div class="skills-wrapper">
 
-
             <div class="skill">
-
                 <i class="fa-brands fa-python"></i>
-
                 Python
-
             </div>
 
-
             <div class="skill">
-
                 <i class="fa-solid fa-mobile-screen-button"></i>
-
                 Flutter / Dart
-
             </div>
 
-
             <div class="skill">
-
                 <i class="fa-brands fa-laravel"></i>
-
                 Laravel / PHP
-
             </div>
 
-
             <div class="skill">
-
                 <i class="fa-solid fa-database"></i>
-
                 MySQL
-
             </div>
 
-
             <div class="skill">
-
                 <i class="fa-brands fa-html5"></i>
-
                 HTML / CSS / JavaScript
-
             </div>
 
-
             <div class="skill">
-
                 <i class="fa-solid fa-file-word"></i>
-
                 Microsoft Office
-
             </div>
 
-
             <div class="skill">
-
                 <i class="fa-solid fa-table"></i>
-
                 MS Access / VBA
-
             </div>
 
-
             <div class="skill">
-
                 <i class="fa-brands fa-wordpress"></i>
-
                 WordPress
-
             </div>
 
-
             <div class="skill">
-
                 <i class="fa-solid fa-database"></i>
-
                 Database Development
-
             </div>
 
-
             <div class="skill">
-
                 <i class="fa-solid fa-globe"></i>
-
                 Web Development
-
             </div>
 
-
             <div class="skill">
-
                 <i class="fa-solid fa-chart-column"></i>
-
                 Data Management
-
             </div>
-
 
             <div class="skill">
-
                 <i class="fa-solid fa-chart-line"></i>
-
-                MIS
-
+                Data Analysis
             </div>
 
+            <div class="skill">
+                <i class="fa-solid fa-filter"></i>
+                Data Cleaning
+            </div>
+
+            <div class="skill">
+                <i class="fa-solid fa-keyboard"></i>
+                Data Entry
+            </div>
+
+            <div class="skill">
+                <i class="fa-solid fa-network-wired"></i>
+                CCNA Networking
+            </div>
+
+            <div class="skill">
+                <i class="fa-solid fa-chart-simple"></i>
+                MIS
+            </div>
 
         </div>
 
@@ -2584,16 +5030,25 @@
      SERVICES
 ===================================================== -->
 
-<section id="services">
+<section id="services" class="reveal">
 
     <div class="container">
 
-
         <div class="section-header">
 
-            <span>What I Do</span>
+            <span
+                data-en="What I Do"
+                data-ps="زما خدمتونه"
+            >
+                What I Do
+            </span>
 
-            <h2>My Services</h2>
+            <h2
+                data-en="My Services"
+                data-ps="زما خدمتونه"
+            >
+                My Services
+            </h2>
 
         </div>
 
@@ -2601,112 +5056,188 @@
         <div class="services-grid">
 
 
-            <!-- SERVICE 1 -->
-
             <div class="card service">
 
                 <div class="service-icon">
-
                     <i class="fa-solid fa-code"></i>
-
                 </div>
 
-
-                <h3>
-
+                <h3
+                    data-en="Software Development"
+                    data-ps="د سافټویر جوړونه"
+                >
                     Software Development
-
                 </h3>
 
-
-                <p>
-
+                <p
+                    data-en="Desktop and web-based software systems."
+                    data-ps="د کمپیوټر او ویب پر بنسټ سافټویر سیستمونه."
+                >
                     Desktop and web-based software systems.
-
                 </p>
 
             </div>
 
 
-
-            <!-- SERVICE 2 -->
-
             <div class="card service">
 
                 <div class="service-icon">
-
                     <i class="fa-solid fa-globe"></i>
-
                 </div>
 
-
-                <h3>
-
+                <h3
+                    data-en="Web Development"
+                    data-ps="د ویب جوړونه"
+                >
                     Web Development
-
                 </h3>
 
-
-                <p>
-
+                <p
+                    data-en="Modern websites and business systems."
+                    data-ps="عصري ویبپاڼې او سوداګریز سیستمونه."
+                >
                     Modern websites and business systems.
-
                 </p>
 
             </div>
 
 
-
-            <!-- SERVICE 3 -->
-
             <div class="card service">
 
                 <div class="service-icon">
-
                     <i class="fa-solid fa-database"></i>
-
                 </div>
 
-
-                <h3>
-
+                <h3
+                    data-en="Database Systems"
+                    data-ps="ډیټابېس سیستمونه"
+                >
                     Database Systems
-
                 </h3>
 
-
-                <p>
-
+                <p
+                    data-en="Design and development of practical databases."
+                    data-ps="د عملي ډیټابېسونو ډیزاین او جوړونه."
+                >
                     Design and development of practical databases.
-
                 </p>
 
             </div>
 
 
+            <div class="card service">
 
-            <!-- SERVICE 4 -->
+                <div class="service-icon">
+                    <i class="fa-solid fa-chart-line"></i>
+                </div>
+
+                <h3
+                    data-en="Data Management"
+                    data-ps="د معلوماتو مدیریت"
+                >
+                    Data Management
+                </h3>
+
+                <p
+                    data-en="Data entry, cleaning, analysis, reporting and quality management."
+                    data-ps="د معلوماتو داخلول، پاکول، تحلیل، راپور ورکول او د کیفیت مدیریت."
+                >
+                    Data entry, cleaning, analysis, reporting
+                    and quality management.
+                </p>
+
+            </div>
+
 
             <div class="card service">
 
                 <div class="service-icon">
-
                     <i class="fa-solid fa-chalkboard-user"></i>
-
                 </div>
 
-
-                <h3>
-
+                <h3
+                    data-en="Computer Training"
+                    data-ps="کمپیوټري زده کړې"
+                >
                     Computer Training
-
                 </h3>
 
-
-                <p>
-
+                <p
+                    data-en="Project-based computer and technology education."
+                    data-ps="د پروژو پر بنسټ کمپیوټري او ټکنالوژیکي زده کړې."
+                >
                     Project-based computer and technology education.
+                </p>
 
+            </div>
+
+
+            <div class="card service">
+
+                <div class="service-icon">
+                    <i class="fa-solid fa-language"></i>
+                </div>
+
+                <h3
+                    data-en="English Training"
+                    data-ps="د انګلیسي ژبې روزنه"
+                >
+                    English Training
+                </h3>
+
+                <p
+                    data-en="English grammar, speaking and practical communication training."
+                    data-ps="د انګلیسي ګرامر، خبرو اترو او عملي اړیکو روزنه."
+                >
+                    English grammar, speaking and practical communication training.
+                </p>
+
+            </div>
+
+
+            <div class="card service">
+
+                <div class="service-icon">
+                    <i class="fa-solid fa-file-excel"></i>
+                </div>
+
+                <h3
+                    data-en="Reporting & MIS"
+                    data-ps="راپور ورکول او MIS"
+                >
+                    Reporting & MIS
+                </h3>
+
+                <p
+                    data-en="Data-driven reporting, monitoring information and management support."
+                    data-ps="د معلوماتو پر بنسټ راپورونه، د څارنې معلومات او مدیریتي ملاتړ."
+                >
+                    Data-driven reporting, monitoring information
+                    and management support.
+                </p>
+
+            </div>
+
+
+            <div class="card service">
+
+                <div class="service-icon">
+                    <i class="fa-solid fa-hand-holding-heart"></i>
+                </div>
+
+                <h3
+                    data-en="Humanitarian Data Support"
+                    data-ps="د بشري پروژو معلوماتي ملاتړ"
+                >
+                    Humanitarian Data Support
+                </h3>
+
+                <p
+                    data-en="Data and field-support services for humanitarian and development projects."
+                    data-ps="د بشري او پرمختیايي پروژو لپاره د معلوماتو او ساحوي چارو ملاتړ."
+                >
+                    Data and field-support services for humanitarian
+                    and development projects.
                 </p>
 
             </div>
@@ -2721,26 +5252,302 @@
 
 
 <!-- =====================================================
-     MY FRIENDS
+     SYSTEMS / PROJECTS
 ===================================================== -->
 
-<section id="friends" class="friends-section">
+<section id="projects" class="reveal">
 
     <div class="container">
 
+        <div class="section-header">
+
+            <span
+                data-en="My Projects"
+                data-ps="زما جوړ کړي سیستمونه"
+            >
+                My Projects
+            </span>
+
+            <h2
+                data-en="Systems I Developed"
+                data-ps="هغه سیستمونه چې ما جوړ کړي"
+            >
+                Systems I Developed
+            </h2>
+
+            <p
+                data-en="Some of the software, database and financial management systems I have developed for organizations and businesses."
+                data-ps="ځینې هغه سافټویر، ډیټابېس او مالي مدیریت سیستمونه چې ما د ادارو او سوداګریزو مرکزونو لپاره جوړ کړي دي."
+            >
+                Some of the software, database and financial management systems
+                I have developed for organizations and businesses.
+            </p>
+
+        </div>
+
+
+        <div class="projects-grid">
+
+
+            <div class="card project-card">
+
+                <div class="project-icon">
+                    <i class="fa-solid fa-radio"></i>
+                </div>
+
+                <h3
+                    data-en="Milma Radio Website"
+                    data-ps="د میلما راډیو ویبپاڼه"
+                >
+                    Milma Radio Website
+                </h3>
+
+                <p
+                    data-en="Developed a website for Milma Radio in Paktika."
+                    data-ps="په پکتیکا کې مې د میلما راډیو لپاره ویبپاڼه جوړه کړې ده."
+                >
+                    Developed a website for Milma Radio in Paktika.
+                </p>
+
+                <span class="project-location">
+
+                    <i class="fa-solid fa-location-dot"></i>
+
+                    <span
+                        data-en="Paktika"
+                        data-ps="پکتیکا"
+                    >
+                        Paktika
+                    </span>
+
+                </span>
+
+            </div>
+
+
+            <div class="card project-card">
+
+                <div class="project-icon">
+                    <i class="fa-solid fa-gears"></i>
+                </div>
+
+                <h3
+                    data-en="Alhaj Ghafoorzada Spare Parts Database"
+                    data-ps="د الحاج غفورزاده پرزه فروشي ډیټابېس"
+                >
+                    Alhaj Ghafoorzada Spare Parts Database
+                </h3>
+
+                <p
+                    data-en="Developed a database for wholesale and retail spare-parts sales management in Paktika."
+                    data-ps="په پکتیکا کې مې د الحاج غفورزاده پرزه فروشۍ لپاره د عمده او پرچون خرڅلاو د تنظیم ډیټابېس جوړ کړی دی."
+                >
+                    Developed a database for wholesale and retail spare-parts
+                    sales management in Paktika.
+                </p>
+
+                <span class="project-location">
+
+                    <i class="fa-solid fa-location-dot"></i>
+
+                    <span
+                        data-en="Paktika"
+                        data-ps="پکتیکا"
+                    >
+                        Paktika
+                    </span>
+
+                </span>
+
+            </div>
+
+
+            <div class="card project-card">
+
+                <div class="project-icon">
+                    <i class="fa-solid fa-school"></i>
+                </div>
+
+                <h3
+                    data-en="School Finance Management System"
+                    data-ps="د ښوونځي د مالي مدیریت سیستم"
+                >
+                    School Finance Management System
+                </h3>
+
+                <p
+                    data-en="Developed for Al-Tanseiq Private School in Sharana to manage financial accounts."
+                    data-ps="په پکتیکا مرکز ښرنه کې مې د التنسیق خصوصي ښوونځي د مالي حسابونو د تنظیم لپاره جوړ کړی دی."
+                >
+                    Developed for Al-Tanseiq Private School in Sharana
+                    to manage financial accounts.
+                </p>
+
+                <span class="project-location">
+
+                    <i class="fa-solid fa-location-dot"></i>
+
+                    <span
+                        data-en="Sharana, Paktika"
+                        data-ps="ښرنه، پکتیکا"
+                    >
+                        Sharana, Paktika
+                    </span>
+
+                </span>
+
+            </div>
+
+
+            <div class="card project-card">
+
+                <div class="project-icon">
+                    <i class="fa-solid fa-graduation-cap"></i>
+                </div>
+
+                <h3
+                    data-en="Course Finance Management System"
+                    data-ps="د کورس د مالي مدیریت سیستم"
+                >
+                    Course Finance Management System
+                </h3>
+
+                <p
+                    data-en="Developed for Afghan Oroj Educational Center to organize financial and administrative operations."
+                    data-ps="په پکتیکا کې مې د افغان عروج ښوونیز مرکز د مالي او اداري چارو د تنظیم لپاره جوړ کړی دی."
+                >
+                    Developed for Afghan Oroj Educational Center
+                    to organize financial and administrative operations.
+                </p>
+
+                <span class="project-location">
+
+                    <i class="fa-solid fa-location-dot"></i>
+
+                    <span
+                        data-en="Paktika"
+                        data-ps="پکتیکا"
+                    >
+                        Paktika
+                    </span>
+
+                </span>
+
+            </div>
+
+
+            <div class="card project-card">
+
+                <div class="project-icon">
+                    <i class="fa-solid fa-building"></i>
+                </div>
+
+                <h3
+                    data-en="Construction Finance Management System"
+                    data-ps="د ساختماني شرکت د مالي مدیریت سیستم"
+                >
+                    Construction Finance Management System
+                </h3>
+
+                <p
+                    data-en="Developed for a construction company to manage multiple projects and financial operations."
+                    data-ps="په پکتیکا کې مې د یوه ساختماني شرکت لپاره جوړ کړی چې د بېلابېلو پروژو او مالي چارو مدیریت پرې کېږي."
+                >
+                    Developed for a construction company to manage
+                    multiple projects and financial operations.
+                </p>
+
+                <span class="project-location">
+
+                    <i class="fa-solid fa-location-dot"></i>
+
+                    <span
+                        data-en="Paktika"
+                        data-ps="پکتیکا"
+                    >
+                        Paktika
+                    </span>
+
+                </span>
+
+            </div>
+
+
+            <div class="card project-card">
+
+                <div class="project-icon">
+                    <i class="fa-solid fa-prescription-bottle-medical"></i>
+                </div>
+
+                <h3
+                    data-en="Pharmacy Management System"
+                    data-ps="د دواخانې د مدیریت سیستم"
+                >
+                    Pharmacy Management System
+                </h3>
+
+                <p
+                    data-en="Developed a pharmacy management system for managing pharmacy operations and records."
+                    data-ps="په پکتیکا کې مې یوې دواخانې ته د دواخانې د چارو او معلوماتو د تنظیم لپاره سیستم جوړ کړی دی."
+                >
+                    Developed a pharmacy management system for managing
+                    pharmacy operations and records.
+                </p>
+
+                <span class="project-location">
+
+                    <i class="fa-solid fa-location-dot"></i>
+
+                    <span
+                        data-en="Paktika"
+                        data-ps="پکتیکا"
+                    >
+                        Paktika
+                    </span>
+
+                </span>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     FRIENDS
+===================================================== -->
+
+<section id="friends" class="friends-section reveal">
+
+    <div class="container">
 
         <div class="section-header">
 
-            <span>My Friends</span>
+            <span
+                data-en="My Friends"
+                data-ps="زما ملګري"
+            >
+                My Friends
+            </span>
 
-            <h2>People Around Me</h2>
+            <h2
+                data-en="People Around Me"
+                data-ps="زما ملګري"
+            >
+                People Around Me
+            </h2>
 
-
-            <p>
-
+            <p
+                data-en="A group of friends and professionals whom I value for their friendship, knowledge and experience."
+                data-ps="هغه ملګري او مسلکي کسان چې زه یې د ملګرتیا، پوهې او تجربې له امله ارزښتمن ګڼم."
+            >
                 A group of friends and professionals whom I value
                 for their friendship, knowledge and experience.
-
             </p>
 
         </div>
@@ -2749,12 +5556,7 @@
         <div class="friends-grid">
 
 
-            <!-- =================================================
-                 FRIEND 1 - DILAWAR DANISH
-            ================================================== -->
-
             <div class="card friend-card">
-
 
                 <div class="friend-image-wrapper">
 
@@ -2766,38 +5568,29 @@
 
                 </div>
 
-
                 <h3>
-
                     Dilawar Danish
-
                 </h3>
 
-
-                <p>
-
+                <p
+                    data-en="Teacher & Journalist"
+                    data-ps="ښوونکی او خبریال"
+                >
                     Teacher & Journalist
-
                 </p>
 
-
-                <span class="friend-role">
-
+                <span
+                    class="friend-role"
+                    data-en="Education & Journalism"
+                    data-ps="زده کړې او ژورنالیزم"
+                >
                     Education & Journalism
-
                 </span>
-
 
             </div>
 
 
-
-            <!-- =================================================
-                 FRIEND 2 - MATIULLAH ZHAMAN
-            ================================================== -->
-
             <div class="card friend-card">
-
 
                 <div class="friend-image-wrapper">
 
@@ -2809,38 +5602,29 @@
 
                 </div>
 
-
                 <h3>
-
                     Matiullah Zhaman
-
                 </h3>
 
-
-                <p>
-
+                <p
+                    data-en="12th Grade Graduate & Businessman"
+                    data-ps="د دولسم ټولګي فارغ او سوداګر"
+                >
                     12th Grade Graduate & Businessman
-
                 </p>
 
-
-                <span class="friend-role">
-
+                <span
+                    class="friend-role"
+                    data-en="Business"
+                    data-ps="سوداګري"
+                >
                     Business
-
                 </span>
-
 
             </div>
 
 
-
-            <!-- =================================================
-                 FRIEND 3 - BILAL NIHAL
-            ================================================== -->
-
             <div class="card friend-card">
-
 
                 <div class="friend-image-wrapper">
 
@@ -2852,38 +5636,29 @@
 
                 </div>
 
-
                 <h3>
-
                     Bilal Nihal
-
                 </h3>
 
-
-                <p>
-
+                <p
+                    data-en="English Literature"
+                    data-ps="انګلیسي ادبیات"
+                >
                     English Literature
-
                 </p>
 
-
-                <span class="friend-role">
-
+                <span
+                    class="friend-role"
+                    data-en="English Literature"
+                    data-ps="انګلیسي ادبیات"
+                >
                     English Literature
-
                 </span>
-
 
             </div>
 
 
-
-            <!-- =================================================
-                 FRIEND 4 - ISMAIL SHAFAQ
-            ================================================== -->
-
             <div class="card friend-card">
-
 
                 <div class="friend-image-wrapper">
 
@@ -2895,38 +5670,29 @@
 
                 </div>
 
-
                 <h3>
-
                     Ismail Shafaq
-
                 </h3>
 
-
-                <p>
-
+                <p
+                    data-en="Nurse"
+                    data-ps="نرس"
+                >
                     Nurse
-
                 </p>
 
-
-                <span class="friend-role">
-
+                <span
+                    class="friend-role"
+                    data-en="Healthcare"
+                    data-ps="روغتیا"
+                >
                     Healthcare
-
                 </span>
-
 
             </div>
 
 
-
-            <!-- =================================================
-                 FRIEND 5 - HAZRAT MASHAAL
-            ================================================== -->
-
             <div class="card friend-card">
-
 
                 <div class="friend-image-wrapper">
 
@@ -2938,27 +5704,24 @@
 
                 </div>
 
-
                 <h3>
-
                     Hazrat Mashaal
-
                 </h3>
 
-
-                <p>
-
+                <p
+                    data-en="Businessman & Economist"
+                    data-ps="سوداګر او اقتصاد پوه"
+                >
                     Businessman & Economist
-
                 </p>
 
-
-                <span class="friend-role">
-
+                <span
+                    class="friend-role"
+                    data-en="Business & Economics"
+                    data-ps="سوداګري او اقتصاد"
+                >
                     Business & Economics
-
                 </span>
-
 
             </div>
 
@@ -2975,29 +5738,28 @@
      CONTACT
 ===================================================== -->
 
-<section id="contact" class="contact-section">
+<section id="contact" class="contact-section reveal">
 
     <div class="container">
 
-
         <div class="contact-box">
-
 
             <div>
 
-                <h2>
-
+                <h2
+                    data-en="Let's Work Together"
+                    data-ps="راځئ یوځای کار وکړو"
+                >
                     Let's Work Together
-
                 </h2>
 
-
-                <p>
-
+                <p
+                    data-en="If you need a software system, website, database solution, data-management support, or computer training, feel free to contact me."
+                    data-ps="که تاسو سافټویر سیستم، ویبپاڼه، ډیټابېس، د معلوماتو مدیریت یا کمپیوټري روزنې ته اړتیا لرئ، له ما سره اړیکه ونیسئ."
+                >
                     If you need a software system, website,
-                    database solution, or computer training,
-                    feel free to contact me.
-
+                    database solution, data-management support,
+                    or computer training, feel free to contact me.
                 </p>
 
             </div>
@@ -3010,10 +5772,14 @@
 
                 <i class="fa-solid fa-paper-plane"></i>
 
-                Get In Touch
+                <span
+                    data-en="Get In Touch"
+                    data-ps="اړیکه ونیسئ"
+                >
+                    Get In Touch
+                </span>
 
             </a>
-
 
         </div>
 
@@ -3031,80 +5797,392 @@
 
     <div class="container footer-content">
 
-
-        <p>
-
+        <p
+            data-en="© 2026 Rahmatullah Naveed · Personal Profile"
+            data-ps="© ۲۰۲۶ رحمت الله نوید · شخصي پروفایل"
+        >
             © 2026 Rahmatullah Naveed · Personal Profile
-
         </p>
 
 
         <div class="footer-socials">
 
-
-            <!-- LinkedIn -->
-
             <a
                 href="https://www.linkedin.com/in/rahmatullah-naveed-2412b8331"
                 target="_blank"
-                rel="noopener noreferrer"
                 class="social linkedin"
-                title="LinkedIn"
             >
-
                 <i class="fa-brands fa-linkedin-in"></i>
-
             </a>
-
-
-            <!-- Facebook -->
 
             <a
                 href="https://www.facebook.com/share/1BnZhnywvd/"
                 target="_blank"
-                rel="noopener noreferrer"
                 class="social facebook"
-                title="Facebook"
             >
-
                 <i class="fa-brands fa-facebook-f"></i>
-
             </a>
-
-
-            <!-- WhatsApp -->
 
             <a
                 href="https://wa.me/93792929097"
                 target="_blank"
-                rel="noopener noreferrer"
                 class="social whatsapp"
-                title="WhatsApp"
             >
-
                 <i class="fa-brands fa-whatsapp"></i>
-
             </a>
-
-
-            <!-- Email -->
 
             <a
                 href="mailto:rn4868cs@gmail.com"
                 class="social email-social"
-                title="Email"
             >
-
                 <i class="fa-solid fa-envelope"></i>
-
             </a>
-
 
         </div>
 
     </div>
 
 </footer>
+
+
+
+<!-- =====================================================
+     JAVASCRIPT
+     MOBILE MENU
+     LANGUAGE SWITCHER
+     SCROLL REVEAL
+     NAVBAR EFFECT
+     COUNTERS
+===================================================== -->
+
+<script>
+
+
+    /* =====================================================
+       MOBILE MENU
+    ===================================================== */
+
+    const menuToggle = document.getElementById("menuToggle");
+
+    const navLinks = document.getElementById("navLinks");
+
+
+    menuToggle.addEventListener("click", function () {
+
+        navLinks.classList.toggle("show");
+
+
+        const icon = menuToggle.querySelector("i");
+
+
+        if (navLinks.classList.contains("show")) {
+
+            icon.classList.remove("fa-bars");
+
+            icon.classList.add("fa-xmark");
+
+        } else {
+
+            icon.classList.remove("fa-xmark");
+
+            icon.classList.add("fa-bars");
+
+        }
+
+    });
+
+
+    document.querySelectorAll("#navLinks a").forEach(function(link) {
+
+        link.addEventListener("click", function() {
+
+            navLinks.classList.remove("show");
+
+            const icon = menuToggle.querySelector("i");
+
+            icon.classList.remove("fa-xmark");
+
+            icon.classList.add("fa-bars");
+
+        });
+
+    });
+
+
+
+    /* =====================================================
+       LANGUAGE SWITCHER
+    ===================================================== */
+
+    const enBtn = document.getElementById("enBtn");
+
+    const psBtn = document.getElementById("psBtn");
+
+
+    function setLanguage(language) {
+
+
+        const elements = document.querySelectorAll("[data-en]");
+
+
+        elements.forEach(function(element) {
+
+            if (language === "ps") {
+
+                element.innerHTML = element.getAttribute("data-ps");
+
+            } else {
+
+                element.innerHTML = element.getAttribute("data-en");
+
+            }
+
+        });
+
+
+        if (language === "ps") {
+
+            document.documentElement.lang = "ps";
+
+            document.documentElement.dir = "rtl";
+
+            document.body.classList.add("rtl");
+
+            psBtn.classList.add("active");
+
+            enBtn.classList.remove("active");
+
+            localStorage.setItem("language", "ps");
+
+        } else {
+
+            document.documentElement.lang = "en";
+
+            document.documentElement.dir = "ltr";
+
+            document.body.classList.remove("rtl");
+
+            enBtn.classList.add("active");
+
+            psBtn.classList.remove("active");
+
+            localStorage.setItem("language", "en");
+
+        }
+
+    }
+
+
+    enBtn.addEventListener("click", function() {
+
+        setLanguage("en");
+
+    });
+
+
+    psBtn.addEventListener("click", function() {
+
+        setLanguage("ps");
+
+    });
+
+
+    const savedLanguage = localStorage.getItem("language");
+
+
+    if (savedLanguage === "ps") {
+
+        setLanguage("ps");
+
+    } else {
+
+        setLanguage("en");
+
+    }
+
+
+
+    /* =====================================================
+       NAVBAR SCROLL EFFECT
+    ===================================================== */
+
+    const navbar = document.getElementById("navbar");
+
+
+    window.addEventListener("scroll", function() {
+
+        if (window.scrollY > 20) {
+
+            navbar.classList.add("scrolled");
+
+        } else {
+
+            navbar.classList.remove("scrolled");
+
+        }
+
+    });
+
+
+
+    /* =====================================================
+       SCROLL REVEAL ANIMATION
+    ===================================================== */
+
+    const revealElements =
+        document.querySelectorAll(".reveal");
+
+
+    const revealObserver =
+        new IntersectionObserver(
+
+            function(entries) {
+
+                entries.forEach(function(entry) {
+
+                    if (entry.isIntersecting) {
+
+                        entry.target.classList.add("active");
+
+                    }
+
+                });
+
+            },
+
+            {
+                threshold: 0.12
+            }
+
+        );
+
+
+    revealElements.forEach(function(element) {
+
+        revealObserver.observe(element);
+
+    });
+
+
+
+    /* =====================================================
+       ANIMATED COUNTERS
+    ===================================================== */
+
+    const counters =
+        document.querySelectorAll(".counter");
+
+
+    let countersStarted = false;
+
+
+    function startCounters() {
+
+        if (countersStarted) return;
+
+        countersStarted = true;
+
+
+        counters.forEach(function(counter) {
+
+            const target =
+                Number(counter.getAttribute("data-target"));
+
+            let current = 0;
+
+
+            /*
+             * Special handling for 2016
+             * because it is a year rather than a quantity.
+             */
+
+            if (target === 2016) {
+
+                let year = 2000;
+
+
+                const timer = setInterval(function() {
+
+                    year += 8;
+
+                    if (year >= 2016) {
+
+                        year = 2016;
+
+                        clearInterval(timer);
+
+                    }
+
+                    counter.textContent = year;
+
+                }, 20);
+
+
+                return;
+
+            }
+
+
+            const increment =
+                Math.max(1, Math.ceil(target / 40));
+
+
+            const timer = setInterval(function() {
+
+                current += increment;
+
+
+                if (current >= target) {
+
+                    current = target;
+
+                    clearInterval(timer);
+
+                }
+
+
+                counter.textContent = current;
+
+            }, 35);
+
+        });
+
+    }
+
+
+
+    const achievementSection =
+        document.getElementById("achievements");
+
+
+    const counterObserver =
+        new IntersectionObserver(
+
+            function(entries) {
+
+                entries.forEach(function(entry) {
+
+                    if (entry.isIntersecting) {
+
+                        startCounters();
+
+                    }
+
+                });
+
+            },
+
+            {
+                threshold: 0.25
+            }
+
+        );
+
+
+    counterObserver.observe(achievementSection);
+
+
+</script>
 
 
 </body>
